@@ -218,14 +218,14 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(34, 197, 94, 0.2);
+    background-color: rgba(34, 197, 94, 0.103);
+    border: 1px solid rgba(34, 197, 94, 0.3);
     padding: 4px 12px;
     border-radius: 50px;
     font-size: 0.75rem;
-    color: #22c55e;
+    color: #22b658;
     margin-bottom: 15px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .green-dot {
@@ -264,23 +264,20 @@ a {
 .social-links-title {
     margin-top: 25px;
     display: flex;
-    gap: 25px;
+    gap: 35px;
 }
 
-.social-links-title a {
-    margin-left: 0px;
-}
-
-.social-links-title {
+.social-icon {
     display: inline-flex;
     align-items: center;
+    gap: 8px;
     color: var(--color-texto);
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.social-links-title a:hover {
+.social-icon:hover {
     color: var(--color-texto);
     text-shadow: 0px 2px 10px var(--color-texto);
     text-decoration: none;
@@ -785,132 +782,138 @@ a {
 
 .containerProyectos {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    gap: 40px;
     justify-content: center;
-    padding: 20px;
+    padding: 20px 5%;
 }
 
 .cardProject {
     position: relative;
     background-color: var(--color-fondo-card);
     color: var(--color-texto);
-    border-radius: 10px;
-    width: 300px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
     min-height: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-align: left;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    overflow: hidden;
 
     animation: reveal 0.8s ease both;
     animation-timeline: view();
     animation-range: entry 10% cover 40%;
 }
 
-.cardProject img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    width: 300px;
-    height: 228px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.cardProject:nth-child(even) {
+    flex-direction: row-reverse;
 }
 
-.cardProject img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.containerImage {
+    flex: 1.2;
+    overflow: hidden;
+}
+
+.cardProject img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .cardProject h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--color-texto-titulo);
 }
 
 .cardProject p {
-    font-size: 1rem;
-    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--color-text-secundario);
 }
 
 .containerCard {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
+    justify-content: center;
+    padding: 40px;
+    background-color: var(--color-fondo-card);
 }
 
 .containerTextCard {
-    flex-grow: 1;
-    padding: 15px;
+    padding: 0;
 }
 
 .containerIconsCard {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 15px;
-    padding-bottom: 15px;
-    margin-top: auto;
+    margin-bottom: 25px;
 }
 
 .tech-icons {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    gap: 12px;
+}
+
+.icon-project-tec {
+    width: 24px;
+    height: 24px;
 }
 
 .buttons {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 300px;
-    height: 228px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    opacity: 0;
-    pointer-events: none;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    transition: opacity 0.3s ease;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .buttons a {
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 0.9rem;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
     text-decoration: none;
-    color: #000000;
-    text-align: center;
-    background-color: #ffffff;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-    border: 1px solid rgb(0, 0, 0);
+    color: var(--color-texto);
+    background-color: transparent;
+    border: 1px solid var(--color-texto);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
 }
 
 .buttons a:hover {
-    color: #fff;
-    background-color: #0B0C0D;
-    -webkit-animation: shadow-pop-sides 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    animation: shadow-pop-sides 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    background-color: var(--color-texto);
+    color: var(--color-fondo-card);
 }
 
-@keyframes shadow-pop-sides {
-    0% {
-        box-shadow: 0 0 #ffff;
+@media screen and (max-width: 900px) {
+
+    .cardProject,
+    .cardProject:nth-child(even) {
+        flex-direction: column;
+        max-width: 500px;
     }
 
-    100% {
-        box-shadow: -0.10rem 0 #ffff, 0.10rem 0 #ffff;
+    .containerImage {
+        height: 250px;
+    }
+
+    .containerCard {
+        padding: 30px;
+    }
+
+    .cardProject h2 {
+        font-size: 1.5rem;
     }
 }
 
-.containerImage:hover .buttons {
-    opacity: 1;
-    pointer-events: all;
-}
+/* Removed image hover buttons logic */
 
 
 :root {
@@ -1111,7 +1114,6 @@ footer {
 
 .social-icon {
     color: var(--color-texto);
-    margin: 0 10px;
     text-decoration: none;
     font-weight: bold;
 }

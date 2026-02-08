@@ -6,15 +6,15 @@ import { useTranslations } from '../../i18n/utils';
 const LANG = 'fr';
 const THEMES = Object.freeze({
   moon: ['#0B0C0D', '#0F0F0F', '#181818', '#ffffff', '#020202', '#9e9e9e', '#d2d438', '#333333', '#333333'],
-  sun: ['#cccccc', '#ffffff', '#cecece', '#000000', '#020202', '#494949', '#303030FF', '#CCCCCC', '#c9c9c9'],
-  sunset: ['#202b26', '#3c4d45', '#597065', '#ffffff', '#020202', '#a4b68d', '#96B492FF', '#96B492FF', 'rgb(102, 129, 116)'],
+  sun: ['#FFFFFF', '#F3F4F6', '#FFFFFF', '#111827', '#020202', '#4B5563', '#2563EB', '#F3F4F6', '#FFFFFF'],
+  sunset: ['#0F172A', '#1E293B', '#334155', '#ffffff', '#020202', '#94A3B8', '#FCD34D', '#1E293B', '#334155'],
   sunrise: ['#F08080', '#F4978E', '#be766f', '#2C2C2CFF', '#020202', 'rgb(63, 50, 50)', '#3F3F3FFF', '#F8AD9D', 'rgb(190, 119, 112)'],
 });
 
 const THEMES_THG = Object.freeze({
   moon: ['#E34F26', '#1572B6', '#F7DF1E', '#7952B3', '#4A90E2', '#4A90E2', '#2a2e35'],
-  sun: ['#303030FF', '#303030FF', '#303030FF', '#303030FF', '#303030FF', '#303030FF', '#C4C4C4FF'],
-  sunset: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#2a2e35'],
+  sun: ['#111827', '#111827', '#111827', '#111827', '#111827', '#111827', '#D1D5DB'],
+  sunset: ['#FCD34D', '#FCD34D', '#FCD34D', '#FCD34D', '#FCD34D', '#FCD34D', '#334155'],
   sunrise: ['#271313FF', '#271313FF', '#271313FF', '#271313FF', '#271313FF', '#271313FF', '#af6f69'],
 });
 
@@ -106,10 +106,22 @@ const Navbar = () => {
       const vars = ['--html', '--css', '--js', '--bts', '--cloud', '--react', '--icon'];
       vars.forEach((v, i) => style.setProperty(v, thgColors[i]));
 
-      // Performance: Removed --theme-input-filter and --language-input-filter updates
-      // as they cause heavy repaints on large layers.
+      const isLightMode = theme === 'sun' || theme === 'sunrise';
+      const navbarIcons = document.querySelectorAll('.theme-input, .language-input');
+      navbarIcons.forEach(icon => {
+        icon.style.filter = isLightMode ? 'brightness(0)' : 'none';
+      });
 
-      // DOM-specific logic preserved but checked for existence
+      const linkedinIcon = document.getElementById('linkedin-icon');
+      const githubIcon = document.getElementById('github-icon');
+
+      if (linkedinIcon) {
+        linkedinIcon.style.filter = isLightMode ? 'brightness(0)' : 'none';
+      }
+      if (githubIcon) {
+        githubIcon.style.filter = isLightMode ? 'brightness(0)' : 'none';
+      }
+
       const iconSrc = (theme === 'moon' || theme === 'sunset') ? '/SVG/expressw.svg' : '/SVG/express.svg';
       ['first-project-express-icon', 'skills-express-icon'].forEach(id => {
         const el = document.getElementById(id);
