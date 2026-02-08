@@ -432,9 +432,6 @@ a {
         margin-right: 20%;
     }
 
-    .close {
-        display: none;
-    }
 }
 
 @media screen and (min-width: 2425px) {
@@ -505,9 +502,6 @@ a {
         width: 200px;
     }
 
-    .close {
-        display: none;
-    }
 
     .navbar-links {
         margin-left: 0;
@@ -663,6 +657,39 @@ a {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    position: relative;
+    padding: 60px 0;
+    margin: 40px 0;
+}
+
+.certifications::before,
+.certifications::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-texto), transparent);
+    opacity: 0.5;
+}
+
+.certifications::before {
+    top: 0;
+}
+
+.certifications::after {
+    bottom: 0;
+}
+
+/* Optional: Small decorative center mark */
+.certifications::before {
+    background: radial-gradient(circle at center, var(--color-texto) 2px, transparent 2px),
+        linear-gradient(to right, transparent, var(--color-texto), transparent);
+}
+
+.certifications::after {
+    background: radial-gradient(circle at center, var(--color-texto) 2px, transparent 2px),
+        linear-gradient(to right, transparent, var(--color-texto), transparent);
 }
 
 .certifications img {
@@ -709,7 +736,7 @@ a {
 .modal {
     display: none;
     position: fixed;
-    z-index: 100;
+    z-index: 1100;
     /* Increased to ensure it stays on top without excessive stacking context */
     left: 0;
     top: 0;
@@ -725,18 +752,27 @@ a {
 }
 
 .modal-content {
-    max-width: 40%;
-    max-height: 80%;
+    max-width: min(90%, 900px);
+    max-height: min(85vh, 650px);
+    width: auto;
+    height: auto;
     margin: auto;
     display: block;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 600px) {
-    .modal-content {
-        max-width: 100%;
-        max-height: 100%;
+
+@media (max-width: 770px) {
+    .modal {
+        padding: 15px;
     }
 
+    .modal-content {
+        max-width: 95%;
+        max-height: 80vh;
+    }
 }
 
 #imageModal {
@@ -753,16 +789,43 @@ a {
 
 .close {
     color: var(--color-texto);
-    font-size: 36px;
-    font-weight: bold;
     position: absolute;
-    top: 50%;
-    right: 15%;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 105;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 5px;
+    transition: background 0.3s ease;
 }
 
-.close:hover,
-.close:focus {
-    color: var(--color-scroll-down-hover);
+.close img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s ease;
+}
+
+@media (max-width: 770px) {
+    .close {
+        top: 15px;
+        right: 15px;
+    }
+
+    .close img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.close:hover img {
+    transform: scale(1.1);
 }
 
 
@@ -813,8 +876,11 @@ a {
 }
 
 .containerImage {
-    flex: 1.2;
+    flex: 2.33;
+    /* Approx 70% */
     overflow: hidden;
+    position: relative;
+    height: 100%;
 }
 
 .cardProject img {
@@ -839,6 +905,7 @@ a {
 
 .containerCard {
     flex: 1;
+    /* Approx 30% */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -898,19 +965,84 @@ a {
     .cardProject:nth-child(even) {
         flex-direction: column;
         max-width: 500px;
+        min-height: auto;
     }
 
     .containerImage {
-        height: 250px;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        height: auto;
+        flex: none;
     }
 
     .containerCard {
         padding: 30px;
+        flex: none;
     }
 
     .cardProject h2 {
         font-size: 1.5rem;
     }
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-images img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-images img.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--color-texto);
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 /* Removed image hover buttons logic */
@@ -1113,6 +1245,9 @@ footer {
 }
 
 .social-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     color: var(--color-texto);
     text-decoration: none;
     font-weight: bold;
@@ -1217,7 +1352,7 @@ footer {
     width: 13.30px;
     height: 20px;
     position: relative;
-    top: 4px;
+    top: 0px;
     filter: var(--theme-input-filter, none);
     transition: filter 0.3s ease;
 }
@@ -1229,7 +1364,7 @@ footer {
     width: auto;
     height: auto;
     position: relative;
-    top: 4px;
+    top: 0px;
 }
 
 .social-links #github,
@@ -1240,11 +1375,11 @@ footer {
     width: 16.30px;
     height: auto;
     position: relative;
-    top: 4px;
+    top: 0px;
 }
 
 .social-links {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #hamburgerr {
