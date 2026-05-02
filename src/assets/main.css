@@ -12,7 +12,13 @@
     --color-arrow: #181818;
 }
 
-/* Icon utility classes using masks to allow color control via background-color */
+/* Theme adaptation for icons - handled via CSS instead of JS IDs */
+[data-theme='sun'] .theme-adaptive-icon,
+[data-theme='sunrise'] .theme-adaptive-icon {
+    filter: brightness(0);
+}
+
+/* Icon utility classes using masks */
 .icon-github {
     background-color: currentColor;
     mask: url(/SVG/github_white.svg) no-repeat center;
@@ -35,6 +41,27 @@
     transition: transform 0.35s ease, background-color 0.3s ease;
 }
 
+.icon-instagram {
+    background-color: currentColor;
+    mask: url(/SVG/instagram_white.svg) no-repeat center;
+    mask-size: contain;
+    display: inline-block;
+}
+
+.icon-linkedin {
+    background-color: currentColor;
+    mask: url(/SVG/linkedin_white.svg) no-repeat center;
+    mask-size: contain;
+    display: inline-block;
+}
+
+.icon-copy {
+    background-color: currentColor;
+    mask: url(/SVG/copy_white.svg) no-repeat center;
+    mask-size: contain;
+    display: inline-block;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -55,7 +82,7 @@ body {
     width: 30px;
     height: 30px;
     border: 2px solid var(--color-texto);
-    box-shadow: 0 0 0 2px black;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
     position: fixed;
     pointer-events: none;
     border-radius: 50%;
@@ -63,7 +90,7 @@ body {
     left: 50%;
     z-index: 9999999;
     transform: translate(-50%, -50%);
-    transition: all 0.2s ease;
+    /* Removed all-encompassing transition to avoid conflicts with JS animation */
 }
 
 .cursor-dot {
@@ -79,7 +106,7 @@ body {
     left: 50%;
     pointer-events: none;
     position: fixed;
-    transition: width 0.3s, height 0.3s;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -1324,6 +1351,7 @@ a {
 /* Removed image hover buttons logic */
 
 
+/* Theme technology colors - managed via navbar.jsx */
 :root {
     --html: #E34F26;
     --css: #1572B6;
@@ -1533,20 +1561,18 @@ footer {
 .email button {
     padding: 10px;
     background-color: rgba(95, 158, 160, 0);
-    border: none;
+    border: 2px solid transparent;
     border-radius: 5px;
     color: var(--color-texto);
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .email button:hover {
     color: var(--color-texto);
     -webkit-animation: shadow-pop-tl 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
     animation: shadow-pop-tl 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    padding-top: 1px;
-    margin-top: 9px;
+    border-top-color: var(--color-texto);
 }
-
 
 @keyframes shadow-pop-tl {
     0% {
@@ -1582,7 +1608,6 @@ footer {
 
 
 }
-
 
 #copy-btn {
     display: flex;

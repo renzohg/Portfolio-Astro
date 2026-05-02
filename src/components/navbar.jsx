@@ -96,6 +96,7 @@ const Navbar = () => {
 
     const root = rootRef.current || document.documentElement;
     const style = root.style;
+    root.setAttribute('data-theme', theme);
 
     // Batch all CSS variable updates
     style.setProperty('--color-navbar', colors[0]);
@@ -125,17 +126,6 @@ const Navbar = () => {
       vars.forEach((v, i) => style.setProperty(v, thgColors[i]));
 
       const isLightMode = theme === 'sun' || theme === 'sunrise';
-      const navbarIcons = document.querySelectorAll('.theme-input, .language-input');
-      navbarIcons.forEach(icon => {
-        icon.style.filter = isLightMode ? 'brightness(0)' : 'none';
-      });
-
-      const whiteIcons = ['linkedin-icon', 'github-icon', 'instagram', 'linkedin', 'github', 'copyy'];
-      whiteIcons.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.filter = isLightMode ? 'brightness(0)' : 'none';
-      });
-
       const folderIcons = document.querySelectorAll('.folder-icon');
       folderIcons.forEach(icon => {
         icon.style.stroke = theme === 'sunrise' ? '#000000' : '#f5a623';
@@ -233,7 +223,7 @@ const Navbar = () => {
               <img
                 src={`/${selectedTheme}.webp`}
                 alt="Tema actual"
-                className="theme-input"
+                className="theme-input theme-adaptive-icon"
                 onClick={toggleThemeMenu}
               />
               <div className={`theme-options ${isThemeOpen ? 'open' : ''}`}>
@@ -250,7 +240,7 @@ const Navbar = () => {
 
             <div className="language-select-container">
               <div className="idioma">
-                <img src="/SVG/language.svg" alt="Idioma" className="language-input" onClick={toggleLanguage} />
+                <img src="/SVG/language.svg" alt="Idioma" className="language-input theme-adaptive-icon" onClick={toggleLanguage} />
               </div>
               <div className={`language-options ${isLanguageOpen ? 'open' : ''}`}>
                 <div id="language-navbar" className="language-title" data-i18n="language-navbar">{t('language-navbar') || 'Language'}</div>

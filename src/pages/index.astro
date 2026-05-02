@@ -50,12 +50,10 @@ const t = useTranslations(lang);
                 target="_blank"
                 class="social-icon"
               >
-                <img
-                  alt="link_linkedin"
-                  id="linkedin-icon"
-                  src="/SVG/linkedin_white.svg"
-                  style="width: 19.30px; height: auto"
-                /> LinkedIn
+                <span
+                  class="icon-linkedin"
+                  style="width: 19.30px; height: 19.30px; margin-right: 5px;"
+                ></span> LinkedIn
               </a>
               <a
                 draggable="false"
@@ -988,11 +986,8 @@ const t = useTranslations(lang);
           target="_blank"
           class="social-icon"
         >
-          <img
-            alt="link_instagram"
-            id="instagram"
-            src="/SVG/instagram_white.svg"
-          /><span> Instagram</span></a
+          <span class="icon-instagram" style="width: 19px; height: 19px;"
+          ></span><span> Instagram</span></a
         >
         <a
           draggable="false"
@@ -1000,11 +995,8 @@ const t = useTranslations(lang);
           target="_blank"
           class="social-icon"
         >
-          <img
-            alt="link_linkedin"
-            id="linkedin"
-            src="/SVG/linkedin_white.svg"
-          /><span> LinkedIn</span>
+          <span class="icon-linkedin" style="width: 19px; height: 19px;"
+          ></span><span> LinkedIn</span>
         </a>
         <a
           draggable="false"
@@ -1012,7 +1004,7 @@ const t = useTranslations(lang);
           target="_blank"
           class="social-icon"
         >
-          <span class="icon-github" style="width: 24px; height: 24px"
+          <span class="icon-github" style="width: 19px; height: 19px"
           ></span><span> GitHub</span>
         </a>
       </div>
@@ -1027,12 +1019,12 @@ const t = useTranslations(lang);
         readonly
       />
       <button id="copy-btn" data-copied-text={t("copied")}
-        ><img
-          alt="button_copy"
-          id="copyy"
-          src="/SVG/copy_white.svg"
-          style="margin-right: 5px;"
-        /><span id="copy" data-i18n="copy">{t("copy")}</span></button
+        ><span
+          class="icon-copy"
+          style="width: 15px; height: 15px; margin-right: 5px;"></span><span
+          id="copy"
+          data-i18n="copy">{t("copy")}</span
+        ></button
       >
       <br />
     </div>

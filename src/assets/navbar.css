@@ -1,16 +1,4 @@
-:root {
-  --color-navbar: #0B0C0D;
-  --color-fondo: #0F0F0F;
-  --color-texto: #ffffff;
-  --color-fondo-menu: #020202;
-  --color-text-secundario: #9e9e9e;
-  --color-texto-titulo: #d2d438;
-  --color-fondo-titulos: #333333;
-  --color-fondo-card: #181818;
-  --color-scroll-down: #313131;
-  --color-scroll-down-hover: #b4b4b4;
-}
-
+/* Navbar styling */
 @media screen and (min-width: 881px) {
   .navbar {
     position: fixed;
@@ -223,6 +211,7 @@
 
 }
 
+/* Menu Overlay */
 .menu-overlay {
   display: none;
   position: fixed;
@@ -231,9 +220,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  /* Increased opacity to compensate for blur removal */
   z-index: 50;
-  /* Removed backdrop-filter: blur and filter: pixelate for CPU performance */
 }
 
 .menu-overlay.open {
@@ -246,86 +233,75 @@
   right: 0.25rem;
 }
 
-.language-options {
+/* Common styles for modal-like menus */
+.language-options,
+.theme-options {
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 0.313rem;
-  width: 18.75rem;
-  height: 15.625rem;
+  background-color: var(--color-fondo-menu);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  width: 300px;
+  height: 250px;
   z-index: 100;
-  border: 0.063rem solid #ccc;
-  padding: 0.313rem;
+  text-align: center;
 }
 
-
-.language-options.open {
+.language-options.open,
+.theme-options.open {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: var(--color-fondo-menu);
 }
 
-.language-options label {
+.language-options label,
+.theme-option {
   color: white;
   display: flex;
   align-items: center;
   cursor: pointer;
-}
-
-.language-options label {
   border-bottom: 1px solid white;
   height: 100%;
+  transition: background-color 0.2s ease;
 }
 
-.language-options img {
-  width: 1.25rem;
-  margin-right: 0.5rem;
+.language-options label:hover,
+.theme-option:hover {
+  background-color: #1b1e20;
+}
+
+.language-options img,
+.theme-option img {
+  width: 20px;
+  margin-right: 10px;
 }
 
 .language-options input {
-  margin-right: 0.625rem;
+  margin-right: 10px;
   appearance: none;
-  -webkit-appearance: none;
   width: 11px;
   height: 11px;
   border: 1.5px solid white;
   border-radius: 50%;
   cursor: pointer;
-  position: relative;
-  display: inline-block;
-  background-color: transparent;
-  transition: background-color 0.2s ease;
 }
 
 .language-options input:checked {
   background-color: white;
 }
 
-.language-options input:hover {
-  border-color: #ccc;
-}
-
-.menu-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
+.language-select-container .idioma {
+  margin-top: 3px;
+  align-content: center;
 }
 
 .language-select-container .idioma img {
-  width: 2.188rem;
-  height: 2.188rem;
-}
-
-.language-select-container .idioma {
-  margin-top: 0.188rem;
-  align-content: center;
+  width: 35px;
+  height: 35px;
 }
 
 .navbar-links a button {
@@ -344,15 +320,8 @@
 
 
 @keyframes shadow-pop-tl {
-  0% {
-    -webkit-box-shadow: 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto);
-    box-shadow: 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto), 0 0 var(--color-texto);
-  }
-
-  100% {
-    -webkit-box-shadow: -0.063rem -0.063rem var(--color-texto), -0.125rem -0.125rem var(--color-texto), -0.188rem -0.188rem var(--color-texto), -0.25rem -0.25rem var(--color-texto), -0.313rem -0.313rem var(--color-texto);
-    box-shadow: -0.063rem -0.063rem var(--color-texto), -0.125rem -0.125rem var(--color-texto), -0.188rem -0.188rem var(--color-texto), -0.25rem -0.25rem var(--color-texto), -0.313rem -0.313rem var(--color-texto);
-  }
+  0% { box-shadow: 0 0 var(--color-texto); }
+  100% { box-shadow: -0.1rem -0.1rem var(--color-texto), -0.2rem -0.2rem var(--color-texto), -0.3rem -0.3rem var(--color-texto); }
 }
 
 .theme-options {
