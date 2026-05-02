@@ -178,18 +178,24 @@ const t = useTranslations(lang);
                 style.setProperty("--color-fondo-menu", colors[4]);
                 style.setProperty("--color-text-secundario", colors[5]);
                 style.setProperty("--color-scroll-down-hover", colors[5]);
-                style.setProperty('--color-texto-titulo', colors[6]);
-                style.setProperty('--color-fondo-titulos', colors[7]);
-                style.setProperty('--color-scroll-down', colors[8]);
+                style.setProperty("--color-texto-titulo", colors[6]);
+                style.setProperty("--color-fondo-titulos", colors[7]);
+                style.setProperty("--color-scroll-down", colors[8]);
 
-                if (savedTheme === 'sunrise') {
-                  style.setProperty('--color-badge-text', '#000000');
-                  style.setProperty('--color-badge-border', 'rgba(0, 0, 0, 0.3)');
-                  style.setProperty('--color-badge-dot', '#000000');
+                if (savedTheme === "sunrise") {
+                    style.setProperty("--color-badge-text", "#000000");
+                    style.setProperty(
+                        "--color-badge-border",
+                        "rgba(0, 0, 0, 0.3)",
+                    );
+                    style.setProperty("--color-badge-dot", "#000000");
                 } else {
-                  style.setProperty('--color-badge-text', '#22b658');
-                  style.setProperty('--color-badge-border', 'rgba(34, 197, 94, 0.3)');
-                  style.setProperty('--color-badge-dot', '#22c55e');
+                    style.setProperty("--color-badge-text", "#22b658");
+                    style.setProperty(
+                        "--color-badge-border",
+                        "rgba(34, 197, 94, 0.3)",
+                    );
+                    style.setProperty("--color-badge-dot", "#22c55e");
                 }
             }
         </script>

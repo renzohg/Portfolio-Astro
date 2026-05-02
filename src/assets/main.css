@@ -9,6 +9,30 @@
     --color-fondo-card: #181818;
     --color-scroll-down: #313131;
     --color-scroll-down-hover: #b4b4b4;
+    --color-arrow: #181818;
+}
+
+/* Icon utility classes using masks to allow color control via background-color */
+.icon-github {
+    background-color: currentColor;
+    mask: url(/SVG/github_white.svg) no-repeat center;
+    mask-size: contain;
+    display: inline-block;
+}
+
+.icon-visit {
+    background-color: currentColor;
+    mask: url(/SVG/visit.svg) no-repeat center;
+    mask-size: contain;
+    display: inline-block;
+}
+
+.icon-arrow {
+    background-color: var(--color-arrow);
+    mask: url(/SVG/arrow-down_white.svg) no-repeat center;
+    mask-size: contain;
+    display: inline-block;
+    transition: transform 0.35s ease, background-color 0.3s ease;
 }
 
 html {
@@ -555,7 +579,8 @@ a {
     color: var(--color-scroll-down);
 }
 
-.scroll-down i {
+.scroll-down .icon-arrow {
+    background-color: var(--color-scroll-down);
     animation: bounce 1.5s infinite;
 }
 
@@ -900,11 +925,11 @@ a {
     border-color: var(--color-texto);
 }
 
-.show-more-button i {
+.show-more-button .fa-chevron-down {
     transition: transform 0.3s ease;
 }
 
-.show-more-button.active i {
+.show-more-button.active .fa-chevron-down {
     transform: rotate(180deg);
 }
 
@@ -1089,7 +1114,7 @@ a {
 
 .show-more-button .fa-chevron-down {
     transition: transform 0.35s ease;
-    font-size: 0.8rem;
+    background-color: var(--color-texto);
 }
 
 .show-more-button.active .fa-chevron-down {
@@ -1308,29 +1333,7 @@ a {
     --react: #4a90d9;
 }
 
-.fab.fa-html5 {
-    color: var(--html);
-}
-
-.fab.fa-css3-alt {
-    color: var(--css);
-}
-
-.fab.fa-js {
-    color: var(--js);
-}
-
-.fab.fa-bootstrap {
-    color: var(--bts);
-}
-
-.fas.fa-cloud {
-    color: var(--cloud);
-}
-
-.fab.fa-react {
-    color: var(--react);
-}
+/* Icon colors removed as they now use SVGs */
 
 
 .inicio4 {

@@ -5,10 +5,10 @@ import { useTranslations } from '../i18n/utils';
 // Constants moved outside to prevent re-creation and frozen for safety
 const LANG = 'en';
 const THEMES = Object.freeze({
-  moon: ['#0B0C0D', '#0F0F0F', '#181818', '#ffffff', '#020202', '#9e9e9e', '#d2d438', '#333333', '#333333'],
-  sun: ['#FFFFFF', '#F3F4F6', '#FFFFFF', '#111827', '#020202', '#4B5563', '#2563EB', '#F3F4F6', '#9CA3AF'],
-  sunset: ['#0F172A', '#1E293B', '#334155', '#ffffff', '#020202', '#94A3B8', '#FCD34D', '#1E293B', '#334155'],
-  sunrise: ['#F08080', '#F4978E', '#be766f', '#2C2C2CFF', '#020202', 'rgb(63, 50, 50)', '#3F3F3FFF', '#F8AD9D', 'rgb(190, 119, 112)'],
+  moon: ['#0B0C0D', '#0F0F0F', '#181818', '#ffffff', '#020202', '#9e9e9e', '#d2d438', '#333333', '#333333', '#181818'],
+  sun: ['#FFFFFF', '#F3F4F6', '#FFFFFF', '#111827', '#020202', '#4B5563', '#2563EB', '#F3F4F6', '#9CA3AF', '#E5E7EB'],
+  sunset: ['#0F172A', '#1E293B', '#334155', '#ffffff', '#020202', '#94A3B8', '#FCD34D', '#1E293B', '#334155', '#334155'],
+  sunrise: ['#F08080', '#F4978E', '#be766f', '#2C2C2CFF', '#020202', 'rgb(63, 50, 50)', '#3F3F3FFF', '#F8AD9D', 'rgb(190, 119, 112)', '#be766f'],
 });
 
 const THEMES_THG = Object.freeze({
@@ -108,6 +108,7 @@ const Navbar = () => {
     style.setProperty('--color-texto-titulo', colors[6]);
     style.setProperty('--color-fondo-titulos', colors[7]);
     style.setProperty('--color-scroll-down', colors[8]);
+    style.setProperty('--color-arrow', colors[9]);
 
     if (theme === 'sunrise') {
       style.setProperty('--color-badge-text', '#000000');

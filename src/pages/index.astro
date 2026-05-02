@@ -21,18 +21,6 @@ const t = useTranslations(lang);
       content="Explore my complete web development portfolio and discover how I transform ideas into impactful digital experiences."
     />
     <link rel="shortcut icon" type="image/x-icon" href="/icono.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      media="all"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      />
-    </noscript>
     <meta
       name="google-site-verification"
       content="JcuizXqdDm2PVITIUiiqoovgPaPb9JCV0dbQ7IhlI28"
@@ -44,982 +32,1057 @@ const t = useTranslations(lang);
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
     <div class="line"></div>
-    <div class="inicio">
-      <div class="containerTitle">
-        <div class="titleText">
-          <div class="available-badge">
-            <span class="green-dot"></span>
-            <span data-i18n="available">{t("available")}</span>
-          </div>
-          <h1 id="title" data-i18n="title">{t("title")}</h1>
-          <h2 id="typing-text" data-i18n="typing-text">{t("typing-text")}</h2>
-          <div class="social-links-title">
-            <a
-              draggable="false"
-              href="https://www.linkedin.com/in/renzo-roggiapane-bb4520279/"
-              target="_blank"
-              class="social-icon"
-            >
-              <img
-                alt="link_linkedin"
-                id="linkedin-icon"
-                src="/SVG/linkedin_white.svg"
-                style="width: 19.30px; height: auto"
-              /> LinkedIn
-            </a>
-            <a
-              draggable="false"
-              href="https://github.com/renzohg"
-              target="_blank"
-              class="social-icon"
-            >
-              <img
-                alt="link_github"
-                id="github-icon"
-                src="/SVG/github_white.svg"
-                style="width: 19.30px; height: auto"
-              /> GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="containerImg">
-        <div class="logo-frame">
-          <img src="/logoRenzo.webp" alt="Renzo Logo" />
-        </div>
-      </div>
-      <div class="scroll-down">
-        <a href="#about" aria-label="Ir a la sección Acerca de"
-          ><i class="fas fa-chevron-down"></i></a
-        >
-      </div>
-    </div>
-    <div class="inicio2">
-      <div id="about">
-        <div class="containerAbout" id="aboutSection">
-          <div class="aboutText">
-            <h1 id="about-me" data-i18n="about-me">{t("about-me")}</h1>
-            <h2 id="about-me-text" data-i18n="about-me-text">
-              {t("about-me-text")}
-            </h2>
-          </div>
-          <div class="studies">
-            <h1 id="studies" data-i18n="studies">{t("studies")}</h1>
-            <h2 id="studies-text" data-i18n="studies-text">
-              {t("studies-text")}
-            </h2>
-          </div>
-        </div>
-        <div class="certifications">
-          <img
-            src="webdesing.webp"
-            alt="Responsive Web Design"
-            class="image"
-            loading="lazy"
-          />
-          <img
-            src="/git-github.webp"
-            alt="Git & GitHub"
-            class="image"
-            loading="lazy"
-          />
-          <img
-            src="/comunicacion.webp"
-            alt="Effective Communication"
-            class="image"
-            loading="lazy"
-          />
-        </div>
-        <div id="imageModal" class="modal">
-          <span class="close"
-            ><img src="/SVG/close_white.svg" alt="Close Modal" /></span
-          >
-          <img
-            class="modal-content modalImage"
-            alt="Certification Responsive Web Design"
-          />
-          <div id="caption"></div>
-        </div>
-      </div>
-    </div>
-    <div class="inicio3">
-      <div id="projects">
-        <h1 id="my-projects" data-i18n="my-projects">{t("my-projects")}</h1>
-        <div class="containerProyectos">
-          <!-- ==================== ROGEN AUTOS ==================== -->
-          <div class="cardProject">
-            <div class="containerImage">
-              <div class="carousel">
-                <div class="carousel-images">
-                  <img
-                    draggable="false"
-                    src="/Pages/www.rogen-autos.com1.webp"
-                    alt="Rogen Autos"
-                    class="active"
-                  />
-                  <img
-                    draggable="false"
-                    src="/Pages/www.rogen-autos.com2.webp"
-                    alt="Rogen Autos"
-                  />
-                  <img
-                    draggable="false"
-                    src="/Pages/www.rogen-autos.com3.webp"
-                    alt="Rogen Autos"
-                  />
-                </div>
-                <div class="carousel-dots">
-                  <span class="dot active"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                </div>
-              </div>
-            </div>
-            <div class="containerCard">
-              <div class="containerTextCard">
-                <h2 id="rogen-autos" data-i18n="rogen-autos">
-                  {t("rogen-autos")}
-                </h2>
-                <p id="rogen-autos-text" data-i18n="rogen-autos-text">
-                  {t("rogen-autos-text")}
-                </p>
-              </div>
-              <div class="containerIconsCard">
-                <div class="tech-icons">
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/html5.svg"
-                      alt="HTML5"
-                      loading="lazy"
-                    /><span class="tech-tag-label">HTML</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/css.svg"
-                      alt="CSS"
-                      loading="lazy"
-                    /><span class="tech-tag-label">CSS</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/mongodb.svg"
-                      alt="MongoDB"
-                      loading="lazy"
-                    /><span class="tech-tag-label">MongoDB</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      id="first-project-express-icon"
-                      class="icon-project-tec"
-                      src="/SVG/express.svg"
-                      alt="Express"
-                      loading="lazy"
-                    /><span class="tech-tag-label">Express</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/react.svg"
-                      alt="React"
-                      loading="lazy"
-                    /><span class="tech-tag-label">React</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/nodejs.svg"
-                      alt="Node.js"
-                      loading="lazy"
-                    /><span class="tech-tag-label">Node.js</span></span
-                  >
-                </div>
-              </div>
-              <div class="buttons">
-                <a
-                  draggable="false"
-                  href="https://rogen-autos.com"
-                  target="_blank"
-                  class="view-project"
-                  ><i class="fas fa-external-link-alt"></i>
-                  <span data-i18n="visit">{t("visit")}</span></a
-                >
-              </div>
-            </div>
-          </div>
 
-          <!-- ==================== FOOD STORE ==================== -->
-          <div class="cardProject">
-            <div class="containerImage">
-              <div class="carousel">
-                <div class="carousel-images">
-                  <img
-                    draggable="false"
-                    src="/Pages/foodstore1.webp"
-                    alt="Food-Store"
-                    class="active"
-                  />
-                  <img
-                    draggable="false"
-                    src="/Pages/foodstore2.webp"
-                    alt="Food-Store"
-                  />
-                  <img
-                    draggable="false"
-                    src="/Pages/foodstore3.webp"
-                    alt="Food-Store"
-                  />
-                </div>
-                <div class="carousel-dots">
-                  <span class="dot active"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                </div>
-              </div>
+    <main>
+      <div class="inicio">
+        <div class="containerTitle">
+          <div class="titleText">
+            <div class="available-badge">
+              <span class="green-dot"></span>
+              <span data-i18n="available">{t("available")}</span>
             </div>
-            <div class="containerCard">
-              <div class="containerTextCard">
-                <h2 id="food-store" data-i18n="food-store">
-                  {t("food-store")}
-                </h2>
-                <p id="food-store-text" data-i18n="food-store-text">
-                  {t("food-store-text")}
-                </p>
-              </div>
-              <div class="containerIconsCard">
-                <div class="tech-icons">
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/html5.svg"
-                      alt="HTML5"
-                      loading="lazy"
-                    /><span class="tech-tag-label">HTML</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/css.svg"
-                      alt="CSS"
-                      loading="lazy"
-                    /><span class="tech-tag-label">CSS</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/mongodb.svg"
-                      alt="MongoDB"
-                      loading="lazy"
-                    /><span class="tech-tag-label">MongoDB</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      id="food-store-express-icon"
-                      class="icon-project-tec"
-                      src="/SVG/express.svg"
-                      alt="Express"
-                      loading="lazy"
-                    /><span class="tech-tag-label">Express</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/react.svg"
-                      alt="React"
-                      loading="lazy"
-                    /><span class="tech-tag-label">React</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/nodejs.svg"
-                      alt="Node.js"
-                      loading="lazy"
-                    /><span class="tech-tag-label">Node.js</span></span
-                  >
-                </div>
-              </div>
-              <div class="buttons">
-                <a
-                  draggable="false"
-                  href="https://github.com/renzohg/Food-Store-Frontend"
-                  target="_blank"
-                  class="github-link"><i class="fab fa-github"></i> Frontend</a
-                >
-                <a
-                  draggable="false"
-                  href="https://github.com/renzohg/Food-Store-Backend"
-                  target="_blank"
-                  class="github-link"><i class="fab fa-github"></i> Backend</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- ==================== RGLIBRARY ==================== -->
-          <div class="cardProject">
-            <div class="containerImage">
-              <div class="carousel">
-                <div class="carousel-images">
-                  <img
-                    draggable="false"
-                    src="/Pages/rglibrary.netlify.app1.webp"
-                    alt="RgLibrary"
-                    class="active"
-                  />
-                  <img
-                    draggable="false"
-                    src="/Pages/rglibrary.netlify.app2.webp"
-                    alt="RgLibrary"
-                  />
-                  <img
-                    draggable="false"
-                    src="/Pages/rglibrary.netlify.app3.webp"
-                    alt="RgLibrary"
-                  />
-                </div>
-                <div class="carousel-dots">
-                  <span class="dot active"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                </div>
-              </div>
-            </div>
-            <div class="containerCard">
-              <div class="containerTextCard">
-                <h2 id="rglibrary" data-i18n="rglibrary">{t("rglibrary")}</h2>
-                <p id="rglibrary-text" data-i18n="rglibrary-text">
-                  {t("rglibrary-text")}
-                </p>
-              </div>
-              <div class="containerIconsCard">
-                <div class="tech-icons">
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/html5.svg"
-                      alt="HTML5"
-                      loading="lazy"
-                    /><span class="tech-tag-label">HTML</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/css.svg"
-                      alt="CSS"
-                      loading="lazy"
-                    /><span class="tech-tag-label">CSS</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/react.svg"
-                      alt="React"
-                      loading="lazy"
-                    /><span class="tech-tag-label">React</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/vite.svg"
-                      alt="Vite"
-                      loading="lazy"
-                    /><span class="tech-tag-label">Vite</span></span
-                  >
-                  <span class="tech-tag"
-                    ><img
-                      class="icon-project-tec"
-                      src="/SVG/tailwind.svg"
-                      alt="Tailwind"
-                      loading="lazy"
-                    /><span class="tech-tag-label">Tailwind</span></span
-                  >
-                </div>
-              </div>
-              <div class="buttons">
-                <a
-                  draggable="false"
-                  href="https://rglibrary.netlify.app/"
-                  target="_blank"
-                  class="view-project"
-                  ><i class="fas fa-external-link-alt"></i>
-                  <span data-i18n="visit">{t("visit")}</span></a
-                >
-                <a
-                  draggable="false"
-                  href="https://github.com/renzohg/RgLibrary-React"
-                  target="_blank"
-                  class="github-link"><i class="fab fa-github"></i> GitHub</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- ==================== SHOW MORE BUTTON ==================== -->
-          <div class="show-more-container">
-            <button
-              class="show-more-button"
-              id="show-more-btn"
-              data-show-text="See more projects"
-              data-hide-text="Hide projects"
-            >
-              <span class="show-more-text" data-i18n="show-more"
-                >{t("show-more")}</span
+            <h1 id="title" data-i18n="title">{t("title")}</h1>
+            <h2 id="typing-text" data-i18n="typing-text">{t("typing-text")}</h2>
+            <div class="social-links-title">
+              <a
+                draggable="false"
+                href="https://www.linkedin.com/in/renzo-roggiapane-bb4520279/"
+                target="_blank"
+                class="social-icon"
               >
-              <i class="fas fa-chevron-down"></i>
-            </button>
-          </div>
-
-          <!-- ==================== EXTRA PROJECTS ==================== -->
-          <div class="extra-projects" id="extra-projects">
-            <div class="project-mini-card">
-              <div class="mini-card-header">
-                <svg
-                  class="folder-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#f5a623"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
-                  ></path>
-                </svg>
-                <div class="mini-card-actions">
-                  <a
-                    href="https://cristo-obrero-astro.netlify.app/"
-                    target="_blank"
-                    title="Visit"><i class="fas fa-external-link-alt"></i></a
-                  >
-                  <a
-                    href="https://github.com/renzohg/Cristo-Obrero-Astro"
-                    target="_blank"
-                    title="GitHub"><i class="fab fa-github"></i></a
-                  >
-                </div>
-              </div>
-              <h3 data-i18n="iico">{t("iico")}</h3>
-              <p data-i18n="iico-text">{t("iico-text")}</p>
-              <div class="mini-tech-tags">
-                <span class="mini-tech-tag">HTML</span>
-                <span class="mini-tech-tag">CSS</span>
-                <span class="mini-tech-tag">Astro</span>
-              </div>
-            </div>
-
-            <div class="project-mini-card">
-              <div class="mini-card-header">
-                <svg
-                  class="folder-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#f5a623"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
-                  ></path>
-                </svg>
-                <div class="mini-card-actions">
-                  <a
-                    href="https://fronesis.netlify.app/"
-                    target="_blank"
-                    title="Visit"><i class="fas fa-external-link-alt"></i></a
-                  >
-                </div>
-              </div>
-              <h3 data-i18n="fronesis">{t("fronesis")}</h3>
-              <p data-i18n="fronesis-text">{t("fronesis-text")}</p>
-              <div class="mini-tech-tags">
-                <span class="mini-tech-tag">HTML</span>
-                <span class="mini-tech-tag">CSS</span>
-                <span class="mini-tech-tag">JavaScript</span>
-                <span class="mini-tech-tag">Astro</span>
-              </div>
-            </div>
-
-            <div class="project-mini-card">
-              <div class="mini-card-header">
-                <svg
-                  class="folder-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#f5a623"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
-                  ></path>
-                </svg>
-                <div class="mini-card-actions">
-                  <a
-                    href="https://weather-app-renzo.netlify.app"
-                    target="_blank"
-                    title="Visit"><i class="fas fa-external-link-alt"></i></a
-                  >
-                  <a
-                    href="https://github.com/renzohg/Weather-app-Vue"
-                    target="_blank"
-                    title="GitHub"><i class="fab fa-github"></i></a
-                  >
-                </div>
-              </div>
-              <h3 data-i18n="wheather-app">{t("wheather-app")}</h3>
-              <p data-i18n="wheather-app-text">{t("wheather-app-text")}</p>
-              <div class="mini-tech-tags">
-                <span class="mini-tech-tag">HTML</span>
-                <span class="mini-tech-tag">CSS</span>
-                <span class="mini-tech-tag">Vue</span>
-                <span class="mini-tech-tag">Tailwind</span>
-              </div>
-            </div>
-
-            <div class="project-mini-card">
-              <div class="mini-card-header">
-                <svg
-                  class="folder-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#f5a623"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
-                  ></path>
-                </svg>
-                <div class="mini-card-actions">
-                  <a
-                    href="https://card-generator-renzo.netlify.app/"
-                    target="_blank"
-                    title="Visit"><i class="fas fa-external-link-alt"></i></a
-                  >
-                  <a
-                    href="https://github.com/renzohg/Card-generator"
-                    target="_blank"
-                    title="GitHub"><i class="fab fa-github"></i></a
-                  >
-                </div>
-              </div>
-              <h3 data-i18n="card-generator">{t("card-generator")}</h3>
-              <p data-i18n="card-generator-text">{t("card-generator-text")}</p>
-              <div class="mini-tech-tags">
-                <span class="mini-tech-tag">HTML</span>
-                <span class="mini-tech-tag">CSS</span>
-                <span class="mini-tech-tag">JavaScript</span>
-                <span class="mini-tech-tag">React</span>
-              </div>
-            </div>
-
-            <div class="project-mini-card">
-              <div class="mini-card-header">
-                <svg
-                  class="folder-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#f5a623"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
-                  ></path>
-                </svg>
-                <div class="mini-card-actions">
-                  <a
-                    href="https://test-ig-login.netlify.app/"
-                    target="_blank"
-                    title="Visit"><i class="fas fa-external-link-alt"></i></a
-                  >
-                </div>
-              </div>
-              <h3 data-i18n="instagram-login">{t("instagram-login")}</h3>
-              <p data-i18n="instagram-login-text">
-                {t("instagram-login-text")}
-              </p>
-              <div class="mini-tech-tags">
-                <span class="mini-tech-tag">HTML</span>
-                <span class="mini-tech-tag">CSS</span>
-                <span class="mini-tech-tag">JavaScript</span>
-              </div>
-            </div>
-          </div><!-- /extra-projects -->
-        </div>
-      </div>
-
-      <div class="inicio4">
-        <div id="skills">
-          <h1 id="skills-title" data-i18n="skills-title">
-            {t("skills-title")}
-          </h1>
-          <div class="grid-container">
-            <div class="containerfrontend">
-              <div class="containerhr">
-                <h2>Frontend</h2>
-                <hr />
-              </div>
-              <div class="frontend">
-                <a
-                  draggable="false"
-                  href="https://html.spec.whatwg.org/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img src="/SVG/html5.svg" alt="HTML5 icon" loading="lazy" />
-                    <p>HTML5</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://www.w3.org/Style/CSS/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img src="/SVG/css.svg" alt="CSS icon" loading="lazy" />
-                    <p>CSS</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://getbootstrap.com/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img
-                      src="/SVG/bootstrap.svg"
-                      alt="Bootstrap icon"
-                      loading="lazy"
-                    />
-                    <p>Bootstrap</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://tailwindcss.com/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img
-                      src="/SVG/tailwind.svg"
-                      alt="Tailwind icon"
-                      loading="lazy"
-                    />
-                    <p>Tailwind</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://developer.mozilla.org/es/docs/Web/JavaScript"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img
-                      src="/SVG/javascript.svg"
-                      alt="JavaScript icon"
-                      loading="lazy"
-                    />
-                    <p>JavaScript</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://reactjs.org/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img src="/SVG/react.svg" alt="React icon" loading="lazy" />
-                    <p>React</p>
-                  </div>
-                </a>
-                <a draggable="false" href="https://vue.io/" target="_blank">
-                  <div class="icon">
-                    <img src="/SVG/vue.svg" alt="Vue icon" loading="lazy" />
-                    <p>Vue</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://astro.build/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img src="/SVG/astro.svg" alt="Astro icon" loading="lazy" />
-                    <p>Astro</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="containerbackend">
-              <div class="containerhr">
-                <h2>Backend</h2>
-                <hr />
-              </div>
-              <div class="backend">
-                <a draggable="false" href="https://nodejs.org/" target="_blank">
-                  <div class="icon">
-                    <img
-                      src="/SVG/nodejs.svg"
-                      alt="Node.js icon"
-                      loading="lazy"
-                    />
-                    <p>Node.js</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://expressjs.com/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img
-                      id="skills-express-icon"
-                      src="/SVG/express.svg"
-                      alt="Express.js icon"
-                      loading="lazy"
-                    />
-                    <p>Express.js</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://www.mongodb.com/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img
-                      src="/SVG/mongodb.svg"
-                      alt="MongoDB icon"
-                      loading="lazy"
-                    />
-                    <p>MongoDB</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://www.python.org/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img
-                      src="/SVG/python.svg"
-                      alt="Python icon"
-                      loading="lazy"
-                    />
-                    <p>Python</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="containerothers">
-              <div class="containerhr">
-                <h2 id="other" data-i18n="other">{t("other")}</h2>
-                <hr />
-              </div>
-              <div class="others">
-                <a
-                  draggable="false"
-                  href="https://git-scm.com/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img src="/SVG/git.svg" alt="Git icon" loading="lazy" />
-                    <p>Git</p>
-                  </div>
-                </a>
-                <a draggable="false" href="https://github.com/" target="_blank">
-                  <div class="icon">
-                    <img
-                      src="/SVG/github.svg"
-                      alt="GitHub icon"
-                      loading="lazy"
-                    />
-                    <p>GitHub</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://www.netlify.com/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img
-                      src="/SVG/netlify.svg"
-                      alt="Netlify icon"
-                      loading="lazy"
-                    />
-                    <p>Netlify</p>
-                  </div>
-                </a>
-                <a draggable="false" href="https://vercel.com/" target="_blank">
-                  <div class="icon">
-                    <img
-                      src="/SVG/vercel.svg"
-                      alt="Vercel icon"
-                      loading="lazy"
-                    />
-                    <p>Vercel</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://www.figma.com/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img src="/SVG/figma.svg" alt="Figma icon" loading="lazy" />
-                    <p>Figma</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://www.npmjs.com/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img src="/SVG/npm.svg" alt="npm icon" loading="lazy" />
-                    <p>npm</p>
-                  </div>
-                </a>
-                <a draggable="false" href="https://vitejs.dev/" target="_blank">
-                  <div class="icon">
-                    <img src="/SVG/vite.svg" alt="Vite icon" loading="lazy" />
-                    <p>Vite</p>
-                  </div>
-                </a>
-              </div>
+                <img
+                  alt="link_linkedin"
+                  id="linkedin-icon"
+                  src="/SVG/linkedin_white.svg"
+                  style="width: 19.30px; height: auto"
+                /> LinkedIn
+              </a>
+              <a
+                draggable="false"
+                href="https://github.com/renzohg"
+                target="_blank"
+                class="social-icon"
+              >
+                <span
+                  class="icon-github"
+                  style="width: 19.30px; height: 19.30px"></span> GitHub
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-      </div>
-    </div>
-
-  <footer>
-    <div id="contact">
-      <div class="footer-content">
-        <div class="social-links">
-          <a
-            draggable="false"
-            href="https://www.instagram.com/renzo_hg/"
-            target="_blank"
-            class="social-icon"
+        <div class="containerImg">
+          <div class="logo-frame">
+            <img src="/logoRenzo.webp" alt="Renzo Logo" />
+          </div>
+        </div>
+        <div class="scroll-down">
+          <a href="#about" aria-label="Ir a la sección Acerca de"
+            ><span
+              class="icon-arrow fa-chevron-down"
+              style="width: 50px; height: 50px;"></span></a
           >
-            <img
-              alt="link_instagram"
-              id="instagram"
-              src="/SVG/instagram_white.svg"
-            /><span> Instagram</span></a
-          >
-          <a
-            draggable="false"
-            href="https://www.linkedin.com/in/renzo-roggiapane-bb4520279/"
-            target="_blank"
-            class="social-icon"
-          >
-            <img
-              alt="link_linkedin"
-              id="linkedin"
-              src="/SVG/linkedin_white.svg"
-            /><span> LinkedIn</span>
-          </a>
-          <a
-            draggable="false"
-            href="https://github.com/renzohg"
-            target="_blank"
-            class="social-icon"
-          >
-            <img
-              alt="link_github"
-              id="github"
-              src="/SVG/github_white.svg"
-            /><span> GitHub</span>
-          </a>
         </div>
       </div>
-      <div class="email">
-        <label for="email">Email: </label>
-        <input
-          autocomplete="on"
-          type="text"
-          id="email"
-          value="renzoroggiapanedev@gmail.com"
-          readonly
-        />
-        <button id="copy-btn" data-copied-text={t("copied")}
-          ><img
-            alt="button_copy"
-            id="copyy"
-            src="/SVG/copy_white.svg"
-            style="margin-right: 5px;"
-          /><span id="copy" data-i18n="copy">{t("copy")}</span></button
-        >
-        <br />
+      <div class="inicio2">
+        <div id="about">
+          <div class="containerAbout" id="aboutSection">
+            <div class="aboutText">
+              <h1 id="about-me" data-i18n="about-me">{t("about-me")}</h1>
+              <h2 id="about-me-text" data-i18n="about-me-text">
+                {t("about-me-text")}
+              </h2>
+            </div>
+            <div class="studies">
+              <h1 id="studies" data-i18n="studies">{t("studies")}</h1>
+              <h2 id="studies-text" data-i18n="studies-text">
+                {t("studies-text")}
+              </h2>
+            </div>
+          </div>
+          <div class="certifications">
+            <img
+              src="webdesing.webp"
+              alt="Responsive Web Design"
+              class="image"
+              loading="lazy"
+            />
+            <img
+              src="/git-github.webp"
+              alt="Git & GitHub"
+              class="image"
+              loading="lazy"
+            />
+            <img
+              src="/comunicacion.webp"
+              alt="Effective Communication"
+              class="image"
+              loading="lazy"
+            />
+          </div>
+          <div id="imageModal" class="modal">
+            <span class="close"
+              ><img src="/SVG/close_white.svg" alt="Close Modal" /></span
+            >
+            <img
+              class="modal-content modalImage"
+              alt="Certification Responsive Web Design"
+            />
+            <div id="caption"></div>
+          </div>
+        </div>
       </div>
-      <p id="thanks-you" class="thank-you" data-i18n="thank-you">
-        {t("thank-you")}
-      </p>
-    </div>
-  </footer>
+      <div class="inicio3">
+        <div id="projects">
+          <h1 id="my-projects" data-i18n="my-projects">{t("my-projects")}</h1>
+          <div class="containerProyectos">
+            <!-- ==================== ROGEN AUTOS ==================== -->
+            <div class="cardProject">
+              <div class="containerImage">
+                <div class="carousel">
+                  <div class="carousel-images">
+                    <img
+                      draggable="false"
+                      src="/Pages/www.rogen-autos.com1.webp"
+                      alt="Rogen Autos"
+                      class="active"
+                    />
+                    <img
+                      draggable="false"
+                      src="/Pages/www.rogen-autos.com2.webp"
+                      alt="Rogen Autos"
+                    />
+                    <img
+                      draggable="false"
+                      src="/Pages/www.rogen-autos.com3.webp"
+                      alt="Rogen Autos"
+                    />
+                  </div>
+                  <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="containerCard">
+                <div class="containerTextCard">
+                  <h2 id="rogen-autos" data-i18n="rogen-autos">
+                    {t("rogen-autos")}
+                  </h2>
+                  <p id="rogen-autos-text" data-i18n="rogen-autos-text">
+                    {t("rogen-autos-text")}
+                  </p>
+                </div>
+                <div class="containerIconsCard">
+                  <div class="tech-icons">
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/html5.svg"
+                        alt="HTML5"
+                        loading="lazy"
+                      /><span class="tech-tag-label">HTML</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/css.svg"
+                        alt="CSS"
+                        loading="lazy"
+                      /><span class="tech-tag-label">CSS</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/mongodb.svg"
+                        alt="MongoDB"
+                        loading="lazy"
+                      /><span class="tech-tag-label">MongoDB</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        id="first-project-express-icon"
+                        class="icon-project-tec"
+                        src="/SVG/express.svg"
+                        alt="Express"
+                        loading="lazy"
+                      /><span class="tech-tag-label">Express</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/react.svg"
+                        alt="React"
+                        loading="lazy"
+                      /><span class="tech-tag-label">React</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/nodejs.svg"
+                        alt="Node.js"
+                        loading="lazy"
+                      /><span class="tech-tag-label">Node.js</span></span
+                    >
+                  </div>
+                </div>
+                <div class="buttons">
+                  <a
+                    draggable="false"
+                    href="https://rogen-autos.com"
+                    target="_blank"
+                    class="view-project"
+                    ><span
+                      class="icon-visit"
+                      style="width: 18px; height: 18px; margin-right: 5px;"
+                    ></span>
+                    <span data-i18n="visit">{t("visit")}</span></a
+                  >
+                </div>
+              </div>
+            </div>
 
-    <script define:vars={{ ui, defaultLang }}>
-      window.uiTranslations = ui;
-      window.defaultLang = defaultLang;
+            <!-- ==================== FOOD STORE ==================== -->
+            <div class="cardProject">
+              <div class="containerImage">
+                <div class="carousel">
+                  <div class="carousel-images">
+                    <img
+                      draggable="false"
+                      src="/Pages/foodstore1.webp"
+                      alt="Food-Store"
+                      class="active"
+                    />
+                    <img
+                      draggable="false"
+                      src="/Pages/foodstore2.webp"
+                      alt="Food-Store"
+                    />
+                    <img
+                      draggable="false"
+                      src="/Pages/foodstore3.webp"
+                      alt="Food-Store"
+                    />
+                  </div>
+                  <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="containerCard">
+                <div class="containerTextCard">
+                  <h2 id="food-store" data-i18n="food-store">
+                    {t("food-store")}
+                  </h2>
+                  <p id="food-store-text" data-i18n="food-store-text">
+                    {t("food-store-text")}
+                  </p>
+                </div>
+                <div class="containerIconsCard">
+                  <div class="tech-icons">
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/html5.svg"
+                        alt="HTML5"
+                        loading="lazy"
+                      /><span class="tech-tag-label">HTML</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/css.svg"
+                        alt="CSS"
+                        loading="lazy"
+                      /><span class="tech-tag-label">CSS</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/mongodb.svg"
+                        alt="MongoDB"
+                        loading="lazy"
+                      /><span class="tech-tag-label">MongoDB</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        id="food-store-express-icon"
+                        class="icon-project-tec"
+                        src="/SVG/express.svg"
+                        alt="Express"
+                        loading="lazy"
+                      /><span class="tech-tag-label">Express</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/react.svg"
+                        alt="React"
+                        loading="lazy"
+                      /><span class="tech-tag-label">React</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/nodejs.svg"
+                        alt="Node.js"
+                        loading="lazy"
+                      /><span class="tech-tag-label">Node.js</span></span
+                    >
+                  </div>
+                </div>
+                <div class="buttons">
+                  <a
+                    draggable="false"
+                    href="https://github.com/renzohg/Food-Store-Frontend"
+                    target="_blank"
+                    class="github-link"
+                    ><span
+                      class="icon-github"
+                      style="width: 20px; height: 20px; margin-right: 5px;"
+                    ></span> Frontend</a
+                  >
+                  <a
+                    draggable="false"
+                    href="https://github.com/renzohg/Food-Store-Backend"
+                    target="_blank"
+                    class="github-link"
+                    ><span
+                      class="icon-github"
+                      style="width: 20px; height: 20px; margin-right: 5px;"
+                    ></span> Backend</a
+                  >
+                </div>
+              </div>
+            </div>
 
-      let currentLang = localStorage.getItem("lang") || defaultLang;
+            <!-- ==================== RGLIBRARY ==================== -->
+            <div class="cardProject">
+              <div class="containerImage">
+                <div class="carousel">
+                  <div class="carousel-images">
+                    <img
+                      draggable="false"
+                      src="/Pages/rglibrary.netlify.app1.webp"
+                      alt="RgLibrary"
+                      class="active"
+                    />
+                    <img
+                      draggable="false"
+                      src="/Pages/rglibrary.netlify.app2.webp"
+                      alt="RgLibrary"
+                    />
+                    <img
+                      draggable="false"
+                      src="/Pages/rglibrary.netlify.app3.webp"
+                      alt="RgLibrary"
+                    />
+                  </div>
+                  <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="containerCard">
+                <div class="containerTextCard">
+                  <h2 id="rglibrary" data-i18n="rglibrary">{t("rglibrary")}</h2>
+                  <p id="rglibrary-text" data-i18n="rglibrary-text">
+                    {t("rglibrary-text")}
+                  </p>
+                </div>
+                <div class="containerIconsCard">
+                  <div class="tech-icons">
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/html5.svg"
+                        alt="HTML5"
+                        loading="lazy"
+                      /><span class="tech-tag-label">HTML</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/css.svg"
+                        alt="CSS"
+                        loading="lazy"
+                      /><span class="tech-tag-label">CSS</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/react.svg"
+                        alt="React"
+                        loading="lazy"
+                      /><span class="tech-tag-label">React</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/vite.svg"
+                        alt="Vite"
+                        loading="lazy"
+                      /><span class="tech-tag-label">Vite</span></span
+                    >
+                    <span class="tech-tag"
+                      ><img
+                        class="icon-project-tec"
+                        src="/SVG/tailwind.svg"
+                        alt="Tailwind"
+                        loading="lazy"
+                      /><span class="tech-tag-label">Tailwind</span></span
+                    >
+                  </div>
+                </div>
+                <div class="buttons">
+                  <a
+                    draggable="false"
+                    href="https://rglibrary.netlify.app/"
+                    target="_blank"
+                    class="view-project"
+                    ><span
+                      class="icon-visit"
+                      style="width: 18px; height: 18px; margin-right: 5px;"
+                    ></span>
+                    <span data-i18n="visit">{t("visit")}</span></a
+                  >
+                  <a
+                    draggable="false"
+                    href="https://github.com/renzohg/RgLibrary-React"
+                    target="_blank"
+                    class="github-link"
+                    ><span
+                      class="icon-github"
+                      style="width: 20px; height: 20px; margin-right: 5px;"
+                    ></span> GitHub</a
+                  >
+                </div>
+              </div>
+            </div>
 
-      window.changeLanguage = function (lang) {
-        currentLang = lang;
-        localStorage.setItem("lang", lang);
-        document.documentElement.lang = lang;
+            <!-- ==================== SHOW MORE BUTTON ==================== -->
+            <div class="show-more-container">
+              <button
+                class="show-more-button"
+                id="show-more-btn"
+                data-show-text="See more projects"
+                data-hide-text="Hide projects"
+              >
+                <span class="show-more-text" data-i18n="show-more"
+                  >{t("show-more")}</span
+                >
+                <span
+                  class="icon-arrow fa-chevron-down"
+                  style="width: 18px; height: 18px; margin-left: 5px;"></span>
+              </button>
+            </div>
 
-        const elements = document.querySelectorAll("[data-i18n]");
-        elements.forEach((el) => {
-          const key = el.getAttribute("data-i18n");
-          if (ui[lang] && ui[lang][key]) {
-            if (el.tagName === "TITLE") {
-              el.textContent = ui[lang][key];
-            } else {
-              el.innerText = ui[lang][key];
-            }
-          }
-        });
+            <!-- ==================== EXTRA PROJECTS ==================== -->
+            <div class="extra-projects" id="extra-projects">
+              <div class="project-mini-card">
+                <div class="mini-card-header">
+                  <svg
+                    class="folder-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#f5a623"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                    ></path>
+                  </svg>
+                  <div class="mini-card-actions">
+                    <a
+                      href="https://cristo-obrero-astro.netlify.app/"
+                      target="_blank"
+                      title="Visit"
+                      ><span
+                        class="icon-visit"
+                        style="width: 18px; height: 18px;"></span></a
+                    >
+                    <a
+                      href="https://github.com/renzohg/Cristo-Obrero-Astro"
+                      target="_blank"
+                      title="GitHub"
+                      ><span
+                        class="icon-github"
+                        style="width: 20px; height: 20px;"></span></a
+                    >
+                  </div>
+                </div>
+                <h3 data-i18n="iico">{t("iico")}</h3>
+                <p data-i18n="iico-text">{t("iico-text")}</p>
+                <div class="mini-tech-tags">
+                  <span class="mini-tech-tag">HTML</span>
+                  <span class="mini-tech-tag">CSS</span>
+                  <span class="mini-tech-tag">Astro</span>
+                </div>
+              </div>
 
-        const copyBtn = document.getElementById("copy-btn");
-        if (copyBtn && ui[lang] && ui[lang]["copied"]) {
-          copyBtn.setAttribute("data-copied-text", ui[lang]["copied"]);
-        }
+              <div class="project-mini-card">
+                <div class="mini-card-header">
+                  <svg
+                    class="folder-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#f5a623"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                    ></path>
+                  </svg>
+                  <div class="mini-card-actions">
+                    <a
+                      href="https://fronesis.netlify.app/"
+                      target="_blank"
+                      title="Visit"
+                      ><span
+                        class="icon-visit"
+                        style="width: 18px; height: 18px;"></span></a
+                    >
+                  </div>
+                </div>
+                <h3 data-i18n="fronesis">{t("fronesis")}</h3>
+                <p data-i18n="fronesis-text">{t("fronesis-text")}</p>
+                <div class="mini-tech-tags">
+                  <span class="mini-tech-tag">HTML</span>
+                  <span class="mini-tech-tag">CSS</span>
+                  <span class="mini-tech-tag">JavaScript</span>
+                  <span class="mini-tech-tag">Astro</span>
+                </div>
+              </div>
 
-        const showMoreBtn = document.getElementById("show-more-btn");
-        if (showMoreBtn && ui[lang]) {
-          if (ui[lang]["show-more"]) {
-            showMoreBtn.setAttribute("data-show-text", ui[lang]["show-more"]);
-          }
-          if (ui[lang]["hide-projects"]) {
-            showMoreBtn.setAttribute("data-hide-text", ui[lang]["hide-projects"]);
-          }
-        }
-      };
+              <div class="project-mini-card">
+                <div class="mini-card-header">
+                  <svg
+                    class="folder-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#f5a623"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                    ></path>
+                  </svg>
+                  <div class="mini-card-actions">
+                    <a
+                      href="https://weather-app-renzo.netlify.app"
+                      target="_blank"
+                      title="Visit"
+                      ><span
+                        class="icon-visit"
+                        style="width: 18px; height: 18px;"></span></a
+                    >
+                    <a
+                      href="https://github.com/renzohg/Weather-app-Vue"
+                      target="_blank"
+                      title="GitHub"
+                      ><span
+                        class="icon-github"
+                        style="width: 20px; height: 20px;"></span></a
+                    >
+                  </div>
+                </div>
+                <h3 data-i18n="wheather-app">{t("wheather-app")}</h3>
+                <p data-i18n="wheather-app-text">{t("wheather-app-text")}</p>
+                <div class="mini-tech-tags">
+                  <span class="mini-tech-tag">HTML</span>
+                  <span class="mini-tech-tag">CSS</span>
+                  <span class="mini-tech-tag">Vue</span>
+                  <span class="mini-tech-tag">Tailwind</span>
+                </div>
+              </div>
 
-      if (currentLang !== defaultLang) {
-        window.changeLanguage(currentLang);
-      }
-    </script>
-    <script src="../components/scripts.js"></script>
+              <div class="project-mini-card">
+                <div class="mini-card-header">
+                  <svg
+                    class="folder-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#f5a623"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                    ></path>
+                  </svg>
+                  <div class="mini-card-actions">
+                    <a
+                      href="https://card-generator-renzo.netlify.app/"
+                      target="_blank"
+                      title="Visit"
+                      ><span
+                        class="icon-visit"
+                        style="width: 18px; height: 18px;"></span></a
+                    >
+                    <a
+                      href="https://github.com/renzohg/Card-generator"
+                      target="_blank"
+                      title="GitHub"
+                      ><span
+                        class="icon-github"
+                        style="width: 20px; height: 20px;"></span></a
+                    >
+                  </div>
+                </div>
+                <h3 data-i18n="card-generator">{t("card-generator")}</h3>
+                <p data-i18n="card-generator-text">
+                  {t("card-generator-text")}
+                </p>
+                <div class="mini-tech-tags">
+                  <span class="mini-tech-tag">HTML</span>
+                  <span class="mini-tech-tag">CSS</span>
+                  <span class="mini-tech-tag">JavaScript</span>
+                  <span class="mini-tech-tag">React</span>
+                </div>
+              </div>
+
+              <div class="project-mini-card">
+                <div class="mini-card-header">
+                  <svg
+                    class="folder-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#f5a623"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                    ></path>
+                  </svg>
+                  <div class="mini-card-actions">
+                    <a
+                      href="https://test-ig-login.netlify.app/"
+                      target="_blank"
+                      title="Visit"
+                      ><span
+                        class="icon-visit"
+                        style="width: 18px; height: 18px;"></span></a
+                    >
+                  </div>
+                </div>
+                <h3 data-i18n="instagram-login">{t("instagram-login")}</h3>
+                <p data-i18n="instagram-login-text">
+                  {t("instagram-login-text")}
+                </p>
+                <div class="mini-tech-tags">
+                  <span class="mini-tech-tag">HTML</span>
+                  <span class="mini-tech-tag">CSS</span>
+                  <span class="mini-tech-tag">JavaScript</span>
+                </div>
+              </div>
+            </div><!-- /extra-projects -->
+          </div>
+        </div>
+
+        <div class="inicio4">
+          <div id="skills">
+            <h1 id="skills-title" data-i18n="skills-title">
+              {t("skills-title")}
+            </h1>
+            <div class="grid-container">
+              <div class="containerfrontend">
+                <div class="containerhr">
+                  <h2>Frontend</h2>
+                  <hr />
+                </div>
+                <div class="frontend">
+                  <a
+                    draggable="false"
+                    href="https://html.spec.whatwg.org/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/html5.svg"
+                        alt="HTML5 icon"
+                        loading="lazy"
+                      />
+                      <p>HTML5</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://www.w3.org/Style/CSS/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img src="/SVG/css.svg" alt="CSS icon" loading="lazy" />
+                      <p>CSS</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://getbootstrap.com/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/bootstrap.svg"
+                        alt="Bootstrap icon"
+                        loading="lazy"
+                      />
+                      <p>Bootstrap</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://tailwindcss.com/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/tailwind.svg"
+                        alt="Tailwind icon"
+                        loading="lazy"
+                      />
+                      <p>Tailwind</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://developer.mozilla.org/es/docs/Web/JavaScript"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/javascript.svg"
+                        alt="JavaScript icon"
+                        loading="lazy"
+                      />
+                      <p>JavaScript</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://reactjs.org/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/react.svg"
+                        alt="React icon"
+                        loading="lazy"
+                      />
+                      <p>React</p>
+                    </div>
+                  </a>
+                  <a draggable="false" href="https://vue.io/" target="_blank">
+                    <div class="icon">
+                      <img src="/SVG/vue.svg" alt="Vue icon" loading="lazy" />
+                      <p>Vue</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://astro.build/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/astro.svg"
+                        alt="Astro icon"
+                        loading="lazy"
+                      />
+                      <p>Astro</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="containerbackend">
+                <div class="containerhr">
+                  <h2>Backend</h2>
+                  <hr />
+                </div>
+                <div class="backend">
+                  <a
+                    draggable="false"
+                    href="https://nodejs.org/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/nodejs.svg"
+                        alt="Node.js icon"
+                        loading="lazy"
+                      />
+                      <p>Node.js</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://expressjs.com/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        id="skills-express-icon"
+                        src="/SVG/express.svg"
+                        alt="Express.js icon"
+                        loading="lazy"
+                      />
+                      <p>Express.js</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://www.mongodb.com/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/mongodb.svg"
+                        alt="MongoDB icon"
+                        loading="lazy"
+                      />
+                      <p>MongoDB</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://www.python.org/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/python.svg"
+                        alt="Python icon"
+                        loading="lazy"
+                      />
+                      <p>Python</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="containerothers">
+                <div class="containerhr">
+                  <h2 id="other" data-i18n="other">{t("other")}</h2>
+                  <hr />
+                </div>
+                <div class="others">
+                  <a
+                    draggable="false"
+                    href="https://git-scm.com/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img src="/SVG/git.svg" alt="Git icon" loading="lazy" />
+                      <p>Git</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://github.com/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/github.svg"
+                        alt="GitHub icon"
+                        loading="lazy"
+                      />
+                      <p>GitHub</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://www.netlify.com/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/netlify.svg"
+                        alt="Netlify icon"
+                        loading="lazy"
+                      />
+                      <p>Netlify</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://vercel.com/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/vercel.svg"
+                        alt="Vercel icon"
+                        loading="lazy"
+                      />
+                      <p>Vercel</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://www.figma.com/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img
+                        src="/SVG/figma.svg"
+                        alt="Figma icon"
+                        loading="lazy"
+                      />
+                      <p>Figma</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://www.npmjs.com/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img src="/SVG/npm.svg" alt="npm icon" loading="lazy" />
+                      <p>npm</p>
+                    </div>
+                  </a>
+                  <a
+                    draggable="false"
+                    href="https://vitejs.dev/"
+                    target="_blank"
+                  >
+                    <div class="icon">
+                      <img src="/SVG/vite.svg" alt="Vite icon" loading="lazy" />
+                      <p>Vite</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
+
+<footer>
+  <div id="contact">
+    <div class="footer-content">
+      <div class="social-links">
+        <a
+          draggable="false"
+          href="https://www.instagram.com/renzo_hg/"
+          target="_blank"
+          class="social-icon"
+        >
+          <img
+            alt="link_instagram"
+            id="instagram"
+            src="/SVG/instagram_white.svg"
+          /><span> Instagram</span></a
+        >
+        <a
+          draggable="false"
+          href="https://www.linkedin.com/in/renzo-roggiapane-bb4520279/"
+          target="_blank"
+          class="social-icon"
+        >
+          <img
+            alt="link_linkedin"
+            id="linkedin"
+            src="/SVG/linkedin_white.svg"
+          /><span> LinkedIn</span>
+        </a>
+        <a
+          draggable="false"
+          href="https://github.com/renzohg"
+          target="_blank"
+          class="social-icon"
+        >
+          <span class="icon-github" style="width: 24px; height: 24px"
+          ></span><span> GitHub</span>
+        </a>
+      </div>
+    </div>
+    <div class="email">
+      <label for="email">Email: </label>
+      <input
+        autocomplete="on"
+        type="text"
+        id="email"
+        value="renzoroggiapanedev@gmail.com"
+        readonly
+      />
+      <button id="copy-btn" data-copied-text={t("copied")}
+        ><img
+          alt="button_copy"
+          id="copyy"
+          src="/SVG/copy_white.svg"
+          style="margin-right: 5px;"
+        /><span id="copy" data-i18n="copy">{t("copy")}</span></button
+      >
+      <br />
+    </div>
+    <p id="thanks-you" class="thank-you" data-i18n="thank-you">
+      {t("thank-you")}
+    </p>
+  </div>
+</footer>
+
+<script define:vars={{ ui, defaultLang }}>
+  window.uiTranslations = ui;
+  window.defaultLang = defaultLang;
+
+  let currentLang = localStorage.getItem("lang") || defaultLang;
+
+  window.changeLanguage = function (lang) {
+    currentLang = lang;
+    localStorage.setItem("lang", lang);
+    document.documentElement.lang = lang;
+
+    const elements = document.querySelectorAll("[data-i18n]");
+    elements.forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (ui[lang] && ui[lang][key]) {
+        if (el.tagName === "TITLE") {
+          el.textContent = ui[lang][key];
+        } else {
+          el.innerText = ui[lang][key];
+        }
+      }
+    });
+
+    const copyBtn = document.getElementById("copy-btn");
+    if (copyBtn && ui[lang] && ui[lang]["copied"]) {
+      copyBtn.setAttribute("data-copied-text", ui[lang]["copied"]);
+    }
+
+    const showMoreBtn = document.getElementById("show-more-btn");
+    if (showMoreBtn && ui[lang]) {
+      if (ui[lang]["show-more"]) {
+        showMoreBtn.setAttribute("data-show-text", ui[lang]["show-more"]);
+      }
+      if (ui[lang]["hide-projects"]) {
+        showMoreBtn.setAttribute("data-hide-text", ui[lang]["hide-projects"]);
+      }
+    }
+  };
+
+  if (currentLang !== defaultLang) {
+    window.changeLanguage(currentLang);
+  }
+</script>
+<script src="../components/scripts.js"></script>
