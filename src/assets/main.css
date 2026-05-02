@@ -851,16 +851,75 @@ a {
     padding: 20px 5%;
 }
 
+.extra-projects {
+    display: none;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+.extra-projects.show {
+    display: flex;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.show-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.show-more-button {
+    background: transparent;
+    color: var(--color-text-secundario);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.show-more-button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-texto);
+    border-color: var(--color-texto);
+}
+
+.show-more-button i {
+    transition: transform 0.3s ease;
+}
+
+.show-more-button.active i {
+    transform: rotate(180deg);
+}
+
+
 .cardProject {
     position: relative;
-    background-color: var(--color-fondo-card);
     color: var(--color-texto);
-    border-radius: 20px;
+
     width: 100%;
-    max-width: 1100px;
+    max-width: 1250px;
     margin: 0 auto;
     min-height: 400px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    align-items: center;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -876,11 +935,13 @@ a {
 }
 
 .containerImage {
-    flex: 2.33;
+    flex: 1.2;
     /* Approx 70% */
     overflow: hidden;
     position: relative;
     height: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
 }
 
 .cardProject img {
@@ -888,6 +949,7 @@ a {
     height: 100%;
     object-fit: cover;
     display: block;
+
 }
 
 .cardProject h2 {
@@ -908,9 +970,8 @@ a {
     /* Approx 30% */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 40px;
-    background-color: var(--color-fondo-card);
 }
 
 .containerTextCard {
@@ -921,33 +982,73 @@ a {
     display: flex;
     justify-content: flex-start;
     gap: 15px;
-    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 
 .tech-icons {
     display: flex;
-    gap: 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--color-fondo-card);
+    padding: 5px 12px 5px 8px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-texto);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.tech-tag:hover {
+    background-color: var(--color-fondo-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.tech-tag .icon-project-tec {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
 }
 
 .icon-project-tec {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+}
+
+.tech-tag-label {
+    font-family: monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
 }
 
 .buttons {
     display: flex;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-top: 22px;
+    padding-top: 0;
 }
+
 
 .buttons a {
     padding: 8px 20px;
-    border-radius: 8px;
+    border-radius: 14px;
     font-size: 1rem;
     text-decoration: none;
     color: var(--color-texto);
-    background-color: transparent;
-    border: 1px solid var(--color-texto);
+    background-color: var(--color-texto-titulo);
+    border: 1px solid var(--color-fondo);
+    color: var(--color-fondo);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -957,6 +1058,158 @@ a {
 .buttons a:hover {
     background-color: var(--color-texto);
     color: var(--color-fondo-card);
+}
+
+/* ── Show More Button ────────────────────────────────────────────────────── */
+.show-more-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0 30px;
+}
+
+.show-more-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 0.4px solid var(--color-text-secundario);
+    border-radius: 50px;
+    color: var(--color-texto);
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 10px 28px;
+    letter-spacing: 0.03em;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.show-more-button:hover {
+    border-color: var(--color-texto);
+    transform: translateY(-2px);
+}
+
+.show-more-button .fa-chevron-down {
+    transition: transform 0.35s ease;
+    font-size: 0.8rem;
+}
+
+.show-more-button.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* ── Extra Projects (hidden by default) ──────────────────────────────────── */
+.extra-projects {
+    display: none;
+    width: 100%;
+}
+
+.extra-projects.show {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 8px 0 20px;
+}
+
+/* ── Mini Project Card ───────────────────────────────────────────────────── */
+.project-mini-card {
+    background-color: var(--color-fondo-card);
+    border-radius: 14px;
+    padding: 22px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+    cursor: default;
+}
+
+.project-mini-card:hover {
+    border-color: var(--color-texto);
+    background-color: var(--color-fondo-card);
+    transform: translateY(-3px);
+}
+
+.mini-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.folder-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+.mini-card-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.mini-card-actions i {
+    font-size: 1rem;
+}
+
+.mini-card-actions a {
+    color: var(--color-texto);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    line-height: 1;
+}
+
+.mini-card-actions a:hover {
+    color: var(--color-texto-titulo);
+}
+
+.project-mini-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-texto);
+    margin: 0;
+    line-height: 1.3;
+    margin-top: 5px;
+}
+
+.project-mini-card p {
+    font-size: 0.82rem;
+    color: var(--color-text-secundario);
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
+}
+
+.mini-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 4px;
+}
+
+.mini-tech-tag {
+    font-family: monospace;
+    font-size: 0.82rem;
+    color: var(--color-text-secundario);
+    letter-spacing: 0.03em;
+    background: var(--color-fondo);
+    border-radius: 6px;
+    padding: 2px 10px;
+}
+
+@media screen and (max-width: 900px) {
+    .extra-projects.show {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .extra-projects.show {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -1396,4 +1649,144 @@ footer {
     .navbar-actions {
         margin-right: 28px;
     }
+}
+
+.tech-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background-color: var(--color-fondo-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: var(--color-text-secundario);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.tech-pill:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.tech-pill span {
+    line-height: 1;
+}
+
+/* Adjust tech-icons display if needed */
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tech-icons .icon-project-tec {
+    width: 22px;
+    height: 22px;
+}
+
+.toggle-projects-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.toggle-btn {
+    background-color: var(--color-fondo-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-texto);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hidden-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 5%;
+    max-width: 1250px;
+    margin: 0 auto;
+
+    animation: reveal 0.8s ease both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+}
+
+.small-project-card {
+    background-color: var(--color-fondo-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.small-project-card:hover {
+    transform: translateY(-5px);
+}
+
+.sp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.folder-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.sp-links {
+    display: flex;
+    gap: 15px;
+}
+
+.sp-links a {
+    color: var(--color-text-secundario);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.sp-links a:hover {
+    color: var(--color-texto);
+}
+
+.sp-content {
+    flex-grow: 1;
+}
+
+.sp-content h2 {
+    font-size: 1.4rem;
+    color: var(--color-texto);
+    margin-bottom: 10px;
+}
+
+.sp-content p {
+    font-size: 0.95rem;
+    color: var(--color-text-secundario);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.sp-techs {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--color-text-secundario);
+    word-spacing: 5px;
 }

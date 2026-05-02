@@ -133,11 +133,33 @@ function initCarousels() {
   });
 }
 
+function initShowMore() {
+  const btn = document.getElementById('show-more-btn');
+  const extraProjects = document.getElementById('extra-projects');
+  if (!btn || !extraProjects) return;
+
+  const textSpan = btn.querySelector('.show-more-text');
+  const showText = btn.dataset.showText || 'Show more';
+  const hideText = btn.dataset.hideText || 'Hide projects';
+
+  btn.onclick = function () {
+    const isOpen = extraProjects.classList.toggle('show');
+    btn.classList.toggle('active', isOpen);
+    if (textSpan) {
+      textSpan.textContent = isOpen ? hideText : showText;
+    }
+    if (isOpen) {
+      initCarousels();
+    }
+  };
+}
+
 function initAll() {
   initCopyEmail();
   initModals();
   initCursors();
   initCarousels();
+  initShowMore();
   globalListenersAdded = true;
 }
 
