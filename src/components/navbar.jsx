@@ -6,7 +6,7 @@ import { useTranslations } from '../i18n/utils';
 const LANG = 'en';
 const THEMES = Object.freeze({
   moon: ['#0B0C0D', '#0F0F0F', '#181818', '#ffffff', '#020202', '#9e9e9e', '#d2d438', '#333333', '#333333'],
-  sun: ['#FFFFFF', '#F3F4F6', '#FFFFFF', '#111827', '#020202', '#4B5563', '#2563EB', '#F3F4F6', '#FFFFFF'],
+  sun: ['#FFFFFF', '#F3F4F6', '#FFFFFF', '#111827', '#020202', '#4B5563', '#2563EB', '#F3F4F6', '#9CA3AF'],
   sunset: ['#0F172A', '#1E293B', '#334155', '#ffffff', '#020202', '#94A3B8', '#FCD34D', '#1E293B', '#334155'],
   sunrise: ['#F08080', '#F4978E', '#be766f', '#2C2C2CFF', '#020202', 'rgb(63, 50, 50)', '#3F3F3FFF', '#F8AD9D', 'rgb(190, 119, 112)'],
 });
@@ -74,6 +74,13 @@ const Navbar = () => {
   // Use 'en' consistently to match routes
   const [selectedLanguage, setSelectedLanguage] = useState(LANG);
 
+  useLayoutEffect(() => {
+    const savedLang = storage.get('lang');
+    if (savedLang) {
+      setSelectedLanguage(savedLang);
+    }
+  }, []);
+
   // Use a ref for the style root to avoid layout thrashing during updates
   const rootRef = useRef(null);
 
@@ -102,6 +109,16 @@ const Navbar = () => {
     style.setProperty('--color-fondo-titulos', colors[7]);
     style.setProperty('--color-scroll-down', colors[8]);
 
+    if (theme === 'sunrise') {
+      style.setProperty('--color-badge-text', '#000000');
+      style.setProperty('--color-badge-border', 'rgba(0, 0, 0, 0.3)');
+      style.setProperty('--color-badge-dot', '#000000');
+    } else {
+      style.setProperty('--color-badge-text', '#22b658');
+      style.setProperty('--color-badge-border', 'rgba(34, 197, 94, 0.3)');
+      style.setProperty('--color-badge-dot', '#22c55e');
+    }
+
     if (thgColors) {
       const vars = ['--html', '--css', '--js', '--bts', '--cloud', '--react', '--icon'];
       vars.forEach((v, i) => style.setProperty(v, thgColors[i]));
@@ -112,15 +129,16 @@ const Navbar = () => {
         icon.style.filter = isLightMode ? 'brightness(0)' : 'none';
       });
 
-      const linkedinIcon = document.getElementById('linkedin-icon');
-      const githubIcon = document.getElementById('github-icon');
+      const whiteIcons = ['linkedin-icon', 'github-icon', 'instagram', 'linkedin', 'github', 'copyy'];
+      whiteIcons.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.filter = isLightMode ? 'brightness(0)' : 'none';
+      });
 
-      if (linkedinIcon) {
-        linkedinIcon.style.filter = isLightMode ? 'brightness(0)' : 'none';
-      }
-      if (githubIcon) {
-        githubIcon.style.filter = isLightMode ? 'brightness(0)' : 'none';
-      }
+      const folderIcons = document.querySelectorAll('.folder-icon');
+      folderIcons.forEach(icon => {
+        icon.style.stroke = theme === 'sunrise' ? '#000000' : '#f5a623';
+      });
 
       const iconSrc = (theme === 'moon' || theme === 'sunset') ? '/SVG/expressw.svg' : '/SVG/express.svg';
       ['first-project-express-icon', 'skills-express-icon'].forEach(id => {
@@ -177,8 +195,9 @@ const Navbar = () => {
   const handleLanguageChange = useCallback((language) => {
     setSelectedLanguage(language);
     setActiveMenu(null);
-    if (ROUTES[language]) {
-      window.location.href = ROUTES[language];
+    storage.set('lang', language);
+    if (window.changeLanguage) {
+      window.changeLanguage(language);
     }
   }, []);
 
@@ -196,10 +215,10 @@ const Navbar = () => {
         <div className="container">
           <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
             <div className="menu-title">Menu</div>
-            <a href="#about"><button id="about-navbar" onClick={closeMenus}>{t('about-navbar')}</button></a>
-            <a href="#projects"><button id="projects-navbar" onClick={closeMenus}>{t('projects-navbar')}</button></a>
-            <a href="#skills"><button id="skills-navbar" onClick={closeMenus}>{t('skills-navbar')}</button></a>
-            <a href="#contact"><button id="contact-navbar" onClick={closeMenus}>{t('contact-navbar')}</button></a>
+            <a href="#about"><button id="about-navbar" data-i18n="about-navbar" onClick={closeMenus}>{t('about-navbar')}</button></a>
+            <a href="#projects"><button id="projects-navbar" data-i18n="projects-navbar" onClick={closeMenus}>{t('projects-navbar')}</button></a>
+            <a href="#skills"><button id="skills-navbar" data-i18n="skills-navbar" onClick={closeMenus}>{t('skills-navbar')}</button></a>
+            <a href="#contact"><button id="contact-navbar" data-i18n="contact-navbar" onClick={closeMenus}>{t('contact-navbar')}</button></a>
           </div>
 
           <button className="menu-toggle" aria-label="Abrir menú" onClick={toggleMenu}>
@@ -217,11 +236,11 @@ const Navbar = () => {
                 onClick={toggleThemeMenu}
               />
               <div className={`theme-options ${isThemeOpen ? 'open' : ''}`}>
-                <div id="theme-navbar" className="theme-title">Theme</div>
+                <div id="theme-navbar" className="theme-title" data-i18n="theme-navbar">{t('theme-navbar') || 'Theme'}</div>
                 {Object.keys(THEMES).map(themeKey => (
                   <div key={themeKey} className="theme-option" onClick={() => handleThemeChange(themeKey)}>
                     <img src={`/${themeKey}.webp`} alt={themeKey} />
-                    <span id={`${themeKey}-navbar`}>{t(`${themeKey}-navbar`)}</span>
+                    <span id={`${themeKey}-navbar`} data-i18n={`${themeKey}-navbar`}>{t(`${themeKey}-navbar`)}</span>
                     <ColorCircles theme={themeKey} />
                   </div>
                 ))}
@@ -233,7 +252,7 @@ const Navbar = () => {
                 <img src="/SVG/language.svg" alt="Idioma" className="language-input" onClick={toggleLanguage} />
               </div>
               <div className={`language-options ${isLanguageOpen ? 'open' : ''}`}>
-                <div id="language-navbar" className="language-title">Language</div>
+                <div id="language-navbar" className="language-title" data-i18n="language-navbar">{t('language-navbar') || 'Language'}</div>
                 {[
                   { id: 'englishh', val: 'en', label: 'English', icon: '/SVG/uk.svg' },
                   { id: 'spanishh', val: 'es', label: 'Español', icon: '/SVG/spain.svg' },

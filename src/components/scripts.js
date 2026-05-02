@@ -7,11 +7,10 @@ function initCopyEmail() {
   if (!copyBtn || !emailInput) return;
 
   const copyBtnSpan = copyBtn.querySelector("span");
-  const copiedText = copyBtn.dataset.copiedText || "Copied";
   let restoreTimeout = null;
-
   copyBtn.onclick = function () {
     const textToCopy = emailInput.value;
+    const copiedText = copyBtn.dataset.copiedText || "Copied";
     navigator.clipboard.writeText(textToCopy)
       .then(() => {
         const originalText = copyBtnSpan.textContent;
@@ -139,12 +138,11 @@ function initShowMore() {
   if (!btn || !extraProjects) return;
 
   const textSpan = btn.querySelector('.show-more-text');
-  const showText = btn.dataset.showText || 'Show more';
-  const hideText = btn.dataset.hideText || 'Hide projects';
-
   btn.onclick = function () {
-    const isOpen = extraProjects.classList.toggle('show');
-    btn.classList.toggle('active', isOpen);
+    const showText = btn.dataset.showText || "Show more";
+    const hideText = btn.dataset.hideText || "Hide projects";
+    const isOpen = extraProjects.classList.toggle("show");
+    btn.classList.toggle("active", isOpen);
     if (textSpan) {
       textSpan.textContent = isOpen ? hideText : showText;
     }

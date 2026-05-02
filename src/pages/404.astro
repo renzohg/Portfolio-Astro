@@ -1,0 +1,198 @@
+---
+import "../assets/main.css";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { ui, defaultLang } from "../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" type="image/x-icon" href="/icono.ico" />
+        <title data-i18n="404-title">{t("404-title")}</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            media="all"
+        />
+        <style>
+            .error-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                text-align: center;
+                padding: 0 20px;
+                background-color: var(--color-fondo);
+                color: var(--color-texto);
+            }
+            .error-title {
+                font-size: 8rem;
+                font-weight: bold;
+                color: var(--color-text);
+                margin: 0;
+                line-height: 1;
+                text-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            }
+            .error-subtitle {
+                font-size: 2.5rem;
+                margin-top: 10px;
+                color: var(--color-texto-titulo);
+            }
+            .error-text {
+                font-size: 1.2rem;
+                color: var(--color-text-secundario);
+                margin-top: 20px;
+                max-width: 500px;
+            }
+            .btn-return {
+                margin-top: 40px;
+                padding: 12px 28px;
+                background-color: var(--color-texto);
+                color: var(--color-fondo);
+                text-decoration: none;
+                border-radius: 8px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .btn-return:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                filter: brightness(1.1);
+            }
+            .btn-return i {
+                font-size: 1.2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="cursor-dot" data-cursor-dot></div>
+        <div class="cursor-outline" data-cursor-outline></div>
+
+        <div class="error-container">
+            <h1 class="error-title" data-i18n="404-title">{t("404-title")}</h1>
+            <h2 class="error-subtitle" data-i18n="404-subtitle">
+                {t("404-subtitle")}
+            </h2>
+            <p class="error-text" data-i18n="404-text">{t("404-text")}</p>
+            <a href="/" class="btn-return">
+                <i class="fas fa-home"></i>
+                <span data-i18n="404-btn">{t("404-btn")}</span>
+            </a>
+        </div>
+
+        <script define:vars={{ ui, defaultLang }}>
+            window.uiTranslations = ui;
+            window.defaultLang = defaultLang;
+
+            // LANGUAGE INITIALIZATION
+            let currentLang = localStorage.getItem("lang") || defaultLang;
+
+            function changeLanguage(lang) {
+                currentLang = lang;
+                document.documentElement.lang = lang;
+
+                const elements = document.querySelectorAll("[data-i18n]");
+                elements.forEach((el) => {
+                    const key = el.getAttribute("data-i18n");
+                    if (ui[lang] && ui[lang][key]) {
+                        if (el.tagName === "TITLE") {
+                            el.textContent = ui[lang][key];
+                        } else {
+                            el.innerText = ui[lang][key];
+                        }
+                    }
+                });
+            }
+
+            if (currentLang !== defaultLang) {
+                changeLanguage(currentLang);
+            }
+
+            // THEME INITIALIZATION
+            const THEMES = {
+                moon: [
+                    "#0B0C0D",
+                    "#0F0F0F",
+                    "#181818",
+                    "#ffffff",
+                    "#020202",
+                    "#9e9e9e",
+                    "#d2d438",
+                    "#333333",
+                    "#333333",
+                ],
+                sun: [
+                    "#FFFFFF",
+                    "#F3F4F6",
+                    "#FFFFFF",
+                    "#111827",
+                    "#020202",
+                    "#4B5563",
+                    "#2563EB",
+                    "#F3F4F6",
+                    "#9CA3AF",
+                ],
+                sunset: [
+                    "#0F172A",
+                    "#1E293B",
+                    "#334155",
+                    "#ffffff",
+                    "#020202",
+                    "#94A3B8",
+                    "#FCD34D",
+                    "#1E293B",
+                    "#334155",
+                ],
+                sunrise: [
+                    "#F08080",
+                    "#F4978E",
+                    "#be766f",
+                    "#2C2C2CFF",
+                    "#020202",
+                    "rgb(63, 50, 50)",
+                    "#3F3F3FFF",
+                    "#F8AD9D",
+                    "rgb(190, 119, 112)",
+                ],
+            };
+
+            const savedTheme = localStorage.getItem("selectedTheme") || "moon";
+            const colors = THEMES[savedTheme];
+            if (colors) {
+                const style = document.documentElement.style;
+                style.setProperty("--color-navbar", colors[0]);
+                style.setProperty("--color-fondo", colors[1]);
+                style.setProperty("--color-fondo-card", colors[2]);
+                style.setProperty("--color-texto", colors[3]);
+                style.setProperty("--color-fondo-menu", colors[4]);
+                style.setProperty("--color-text-secundario", colors[5]);
+                style.setProperty("--color-scroll-down-hover", colors[5]);
+                style.setProperty('--color-texto-titulo', colors[6]);
+                style.setProperty('--color-fondo-titulos', colors[7]);
+                style.setProperty('--color-scroll-down', colors[8]);
+
+                if (savedTheme === 'sunrise') {
+                  style.setProperty('--color-badge-text', '#000000');
+                  style.setProperty('--color-badge-border', 'rgba(0, 0, 0, 0.3)');
+                  style.setProperty('--color-badge-dot', '#000000');
+                } else {
+                  style.setProperty('--color-badge-text', '#22b658');
+                  style.setProperty('--color-badge-border', 'rgba(34, 197, 94, 0.3)');
+                  style.setProperty('--color-badge-dot', '#22c55e');
+                }
+            }
+        </script>
+        <script src="../components/scripts.js"></script>
+    </body>
+</html>

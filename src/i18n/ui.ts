@@ -66,7 +66,12 @@ export const ui = {
     'language-navbar': 'Language',
     'copied': 'Copied',
     'available': 'Available for work',
-    'show-more': 'See more projects'
+    'show-more': 'See more projects',
+    '404-title': '404',
+    '404-subtitle': 'Oops! Looks like you got lost.',
+    '404-text': 'The page you are looking for does not exist or has been moved.',
+    '404-btn': 'Return Home',
+    'hide-projects': 'Hide projects'
   },
   es: {
     'nav.home': 'Inicio',
@@ -125,7 +130,12 @@ export const ui = {
     'language-navbar': 'Idioma',
     'copied': 'Copiado',
     'available': 'Disponible para trabajar',
-    'show-more': 'Ver más proyectos'
+    'show-more': 'Ver más proyectos',
+    '404-title': '404',
+    '404-subtitle': '¡Ups! Parece que te desviaste del camino.',
+    '404-text': 'La página que estás buscando no existe o fue movida.',
+    '404-btn': 'Regresar al inicio',
+    'hide-projects': 'Ocultar proyectos'
   },
   fr: {
     'nav.home': 'Accueil',
@@ -184,7 +194,12 @@ export const ui = {
     'language-navbar': 'Langue',
     'copied': 'Copié',
     'available': 'Disponible pour travailler',
-    'show-more': 'Voir plus de projets'
+    'show-more': 'Voir plus de projets',
+    '404-title': '404',
+    '404-subtitle': 'Oups ! Il semble que vous vous soyez égaré.',
+    '404-text': 'La page que vous recherchez n\'existe pas ou a été déplacée.',
+    '404-btn': 'Retour à l\'accueil',
+    'hide-projects': 'Masquer les projets'
   },
   pt: {
     'nav.home': 'Início',
@@ -243,6 +258,11 @@ export const ui = {
     'language-navbar': 'Idioma',
     'copied': 'Copiado',
     'available': 'Disponível para trabalhar',
-    'show-more': 'Ver mais projetos'
+    'show-more': 'Ver mais projetos',
+    '404-title': '404',
+    '404-subtitle': 'Ops! Parece que você se perdeu.',
+    '404-text': 'A página que você está procurando não existe ou foi movida.',
+    '404-btn': 'Voltar ao início',
+    'hide-projects': 'Ocultar projetos'
   }
 };

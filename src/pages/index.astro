@@ -3,6 +3,7 @@ import Navbar from "../components/navbar.jsx";
 import "../assets/main.css";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { ui, defaultLang } from "../i18n/ui";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -36,7 +37,7 @@ const t = useTranslations(lang);
       name="google-site-verification"
       content="JcuizXqdDm2PVITIUiiqoovgPaPb9JCV0dbQ7IhlI28"
     />
-    <title id="title-site">{t("title-site")}</title>
+    <title id="title-site" data-i18n="title-site">{t("title-site")}</title>
   </head>
   <body>
     <Navbar client:load />
@@ -48,10 +49,10 @@ const t = useTranslations(lang);
         <div class="titleText">
           <div class="available-badge">
             <span class="green-dot"></span>
-            {t("available")}
+            <span data-i18n="available">{t("available")}</span>
           </div>
-          <h1 id="title">{t("title")}</h1>
-          <h2 id="typing-text">{t("typing-text")}</h2>
+          <h1 id="title" data-i18n="title">{t("title")}</h1>
+          <h2 id="typing-text" data-i18n="typing-text">{t("typing-text")}</h2>
           <div class="social-links-title">
             <a
               draggable="false"
@@ -97,14 +98,14 @@ const t = useTranslations(lang);
       <div id="about">
         <div class="containerAbout" id="aboutSection">
           <div class="aboutText">
-            <h1 id="about-me">{t("about-me")}</h1>
-            <h2 id="about-me-text">
+            <h1 id="about-me" data-i18n="about-me">{t("about-me")}</h1>
+            <h2 id="about-me-text" data-i18n="about-me-text">
               {t("about-me-text")}
             </h2>
           </div>
           <div class="studies">
-            <h1 id="studies">{t("studies")}</h1>
-            <h2 id="studies-text">
+            <h1 id="studies" data-i18n="studies">{t("studies")}</h1>
+            <h2 id="studies-text" data-i18n="studies-text">
               {t("studies-text")}
             </h2>
           </div>
@@ -141,19 +142,31 @@ const t = useTranslations(lang);
         </div>
       </div>
     </div>
-        <div class="inicio3">
+    <div class="inicio3">
       <div id="projects">
-        <h1 id="my-projects">{t("my-projects")}</h1>
+        <h1 id="my-projects" data-i18n="my-projects">{t("my-projects")}</h1>
         <div class="containerProyectos">
-
           <!-- ==================== ROGEN AUTOS ==================== -->
           <div class="cardProject">
             <div class="containerImage">
               <div class="carousel">
                 <div class="carousel-images">
-                  <img draggable="false" src="/Pages/www.rogen-autos.com1.webp" alt="Rogen Autos" class="active" />
-                  <img draggable="false" src="/Pages/www.rogen-autos.com2.webp" alt="Rogen Autos" />
-                  <img draggable="false" src="/Pages/www.rogen-autos.com3.webp" alt="Rogen Autos" />
+                  <img
+                    draggable="false"
+                    src="/Pages/www.rogen-autos.com1.webp"
+                    alt="Rogen Autos"
+                    class="active"
+                  />
+                  <img
+                    draggable="false"
+                    src="/Pages/www.rogen-autos.com2.webp"
+                    alt="Rogen Autos"
+                  />
+                  <img
+                    draggable="false"
+                    src="/Pages/www.rogen-autos.com3.webp"
+                    alt="Rogen Autos"
+                  />
                 </div>
                 <div class="carousel-dots">
                   <span class="dot active"></span>
@@ -164,21 +177,75 @@ const t = useTranslations(lang);
             </div>
             <div class="containerCard">
               <div class="containerTextCard">
-                <h2 id="rogen-autos">{t("rogen-autos")}</h2>
-                <p id="rogen-autos-text">{t("rogen-autos-text")}</p>
+                <h2 id="rogen-autos" data-i18n="rogen-autos">
+                  {t("rogen-autos")}
+                </h2>
+                <p id="rogen-autos-text" data-i18n="rogen-autos-text">
+                  {t("rogen-autos-text")}
+                </p>
               </div>
               <div class="containerIconsCard">
                 <div class="tech-icons">
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/html5.svg" alt="HTML5" loading="lazy" /><span class="tech-tag-label">HTML</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/css.svg" alt="CSS" loading="lazy" /><span class="tech-tag-label">CSS</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/mongodb.svg" alt="MongoDB" loading="lazy" /><span class="tech-tag-label">MongoDB</span></span>
-                  <span class="tech-tag"><img id="first-project-express-icon" class="icon-project-tec" src="/SVG/express.svg" alt="Express" loading="lazy" /><span class="tech-tag-label">Express</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/react.svg" alt="React" loading="lazy" /><span class="tech-tag-label">React</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/nodejs.svg" alt="Node.js" loading="lazy" /><span class="tech-tag-label">Node.js</span></span>
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/html5.svg"
+                      alt="HTML5"
+                      loading="lazy"
+                    /><span class="tech-tag-label">HTML</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/css.svg"
+                      alt="CSS"
+                      loading="lazy"
+                    /><span class="tech-tag-label">CSS</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/mongodb.svg"
+                      alt="MongoDB"
+                      loading="lazy"
+                    /><span class="tech-tag-label">MongoDB</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      id="first-project-express-icon"
+                      class="icon-project-tec"
+                      src="/SVG/express.svg"
+                      alt="Express"
+                      loading="lazy"
+                    /><span class="tech-tag-label">Express</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/react.svg"
+                      alt="React"
+                      loading="lazy"
+                    /><span class="tech-tag-label">React</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/nodejs.svg"
+                      alt="Node.js"
+                      loading="lazy"
+                    /><span class="tech-tag-label">Node.js</span></span
+                  >
                 </div>
               </div>
               <div class="buttons">
-                <a draggable="false" href="https://rogen-autos.com" target="_blank" class="view-project"><i class="fas fa-external-link-alt"></i> {t("visit")}</a>
+                <a
+                  draggable="false"
+                  href="https://rogen-autos.com"
+                  target="_blank"
+                  class="view-project"
+                  ><i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="visit">{t("visit")}</span></a
+                >
               </div>
             </div>
           </div>
@@ -188,9 +255,22 @@ const t = useTranslations(lang);
             <div class="containerImage">
               <div class="carousel">
                 <div class="carousel-images">
-                  <img draggable="false" src="/Pages/foodstore1.webp" alt="Food-Store" class="active" />
-                  <img draggable="false" src="/Pages/foodstore2.webp" alt="Food-Store" />
-                  <img draggable="false" src="/Pages/foodstore3.webp" alt="Food-Store" />
+                  <img
+                    draggable="false"
+                    src="/Pages/foodstore1.webp"
+                    alt="Food-Store"
+                    class="active"
+                  />
+                  <img
+                    draggable="false"
+                    src="/Pages/foodstore2.webp"
+                    alt="Food-Store"
+                  />
+                  <img
+                    draggable="false"
+                    src="/Pages/foodstore3.webp"
+                    alt="Food-Store"
+                  />
                 </div>
                 <div class="carousel-dots">
                   <span class="dot active"></span>
@@ -201,22 +281,79 @@ const t = useTranslations(lang);
             </div>
             <div class="containerCard">
               <div class="containerTextCard">
-                <h2 id="food-store">{t("food-store")}</h2>
-                <p id="food-store-text">{t("food-store-text")}</p>
+                <h2 id="food-store" data-i18n="food-store">
+                  {t("food-store")}
+                </h2>
+                <p id="food-store-text" data-i18n="food-store-text">
+                  {t("food-store-text")}
+                </p>
               </div>
               <div class="containerIconsCard">
                 <div class="tech-icons">
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/html5.svg" alt="HTML5" loading="lazy" /><span class="tech-tag-label">HTML</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/css.svg" alt="CSS" loading="lazy" /><span class="tech-tag-label">CSS</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/mongodb.svg" alt="MongoDB" loading="lazy" /><span class="tech-tag-label">MongoDB</span></span>
-                  <span class="tech-tag"><img id="food-store-express-icon" class="icon-project-tec" src="/SVG/express.svg" alt="Express" loading="lazy" /><span class="tech-tag-label">Express</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/react.svg" alt="React" loading="lazy" /><span class="tech-tag-label">React</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/nodejs.svg" alt="Node.js" loading="lazy" /><span class="tech-tag-label">Node.js</span></span>
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/html5.svg"
+                      alt="HTML5"
+                      loading="lazy"
+                    /><span class="tech-tag-label">HTML</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/css.svg"
+                      alt="CSS"
+                      loading="lazy"
+                    /><span class="tech-tag-label">CSS</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/mongodb.svg"
+                      alt="MongoDB"
+                      loading="lazy"
+                    /><span class="tech-tag-label">MongoDB</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      id="food-store-express-icon"
+                      class="icon-project-tec"
+                      src="/SVG/express.svg"
+                      alt="Express"
+                      loading="lazy"
+                    /><span class="tech-tag-label">Express</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/react.svg"
+                      alt="React"
+                      loading="lazy"
+                    /><span class="tech-tag-label">React</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/nodejs.svg"
+                      alt="Node.js"
+                      loading="lazy"
+                    /><span class="tech-tag-label">Node.js</span></span
+                  >
                 </div>
               </div>
               <div class="buttons">
-                <a draggable="false" href="https://github.com/renzohg/Food-Store-Frontend" target="_blank" class="github-link"><i class="fab fa-github"></i> Frontend</a>
-                <a draggable="false" href="https://github.com/renzohg/Food-Store-Backend" target="_blank" class="github-link"><i class="fab fa-github"></i> Backend</a>
+                <a
+                  draggable="false"
+                  href="https://github.com/renzohg/Food-Store-Frontend"
+                  target="_blank"
+                  class="github-link"><i class="fab fa-github"></i> Frontend</a
+                >
+                <a
+                  draggable="false"
+                  href="https://github.com/renzohg/Food-Store-Backend"
+                  target="_blank"
+                  class="github-link"><i class="fab fa-github"></i> Backend</a
+                >
               </div>
             </div>
           </div>
@@ -226,9 +363,22 @@ const t = useTranslations(lang);
             <div class="containerImage">
               <div class="carousel">
                 <div class="carousel-images">
-                  <img draggable="false" src="/Pages/rglibrary.netlify.app1.webp" alt="RgLibrary" class="active" />
-                  <img draggable="false" src="/Pages/rglibrary.netlify.app2.webp" alt="RgLibrary" />
-                  <img draggable="false" src="/Pages/rglibrary.netlify.app3.webp" alt="RgLibrary" />
+                  <img
+                    draggable="false"
+                    src="/Pages/rglibrary.netlify.app1.webp"
+                    alt="RgLibrary"
+                    class="active"
+                  />
+                  <img
+                    draggable="false"
+                    src="/Pages/rglibrary.netlify.app2.webp"
+                    alt="RgLibrary"
+                  />
+                  <img
+                    draggable="false"
+                    src="/Pages/rglibrary.netlify.app3.webp"
+                    alt="RgLibrary"
+                  />
                 </div>
                 <div class="carousel-dots">
                   <span class="dot active"></span>
@@ -239,49 +389,122 @@ const t = useTranslations(lang);
             </div>
             <div class="containerCard">
               <div class="containerTextCard">
-                <h2 id="rglibrary">{t("rglibrary")}</h2>
-                <p id="rglibrary-text">{t("rglibrary-text")}</p>
+                <h2 id="rglibrary" data-i18n="rglibrary">{t("rglibrary")}</h2>
+                <p id="rglibrary-text" data-i18n="rglibrary-text">
+                  {t("rglibrary-text")}
+                </p>
               </div>
               <div class="containerIconsCard">
                 <div class="tech-icons">
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/html5.svg" alt="HTML5" loading="lazy" /><span class="tech-tag-label">HTML</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/css.svg" alt="CSS" loading="lazy" /><span class="tech-tag-label">CSS</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/react.svg" alt="React" loading="lazy" /><span class="tech-tag-label">React</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/vite.svg" alt="Vite" loading="lazy" /><span class="tech-tag-label">Vite</span></span>
-                  <span class="tech-tag"><img class="icon-project-tec" src="/SVG/tailwind.svg" alt="Tailwind" loading="lazy" /><span class="tech-tag-label">Tailwind</span></span>
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/html5.svg"
+                      alt="HTML5"
+                      loading="lazy"
+                    /><span class="tech-tag-label">HTML</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/css.svg"
+                      alt="CSS"
+                      loading="lazy"
+                    /><span class="tech-tag-label">CSS</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/react.svg"
+                      alt="React"
+                      loading="lazy"
+                    /><span class="tech-tag-label">React</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/vite.svg"
+                      alt="Vite"
+                      loading="lazy"
+                    /><span class="tech-tag-label">Vite</span></span
+                  >
+                  <span class="tech-tag"
+                    ><img
+                      class="icon-project-tec"
+                      src="/SVG/tailwind.svg"
+                      alt="Tailwind"
+                      loading="lazy"
+                    /><span class="tech-tag-label">Tailwind</span></span
+                  >
                 </div>
               </div>
               <div class="buttons">
-                <a draggable="false" href="https://rglibrary.netlify.app/" target="_blank" class="view-project"><i class="fas fa-external-link-alt"></i> {t("visit")}</a>
-                <a draggable="false" href="https://github.com/renzohg/RgLibrary-React" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+                <a
+                  draggable="false"
+                  href="https://rglibrary.netlify.app/"
+                  target="_blank"
+                  class="view-project"
+                  ><i class="fas fa-external-link-alt"></i>
+                  <span data-i18n="visit">{t("visit")}</span></a
+                >
+                <a
+                  draggable="false"
+                  href="https://github.com/renzohg/RgLibrary-React"
+                  target="_blank"
+                  class="github-link"><i class="fab fa-github"></i> GitHub</a
+                >
               </div>
             </div>
           </div>
 
           <!-- ==================== SHOW MORE BUTTON ==================== -->
           <div class="show-more-container">
-            <button class="show-more-button" id="show-more-btn"
+            <button
+              class="show-more-button"
+              id="show-more-btn"
               data-show-text="See more projects"
-              data-hide-text="Hide projects">
-              <span class="show-more-text">See more projects</span> <i class="fas fa-chevron-down"></i>
+              data-hide-text="Hide projects"
+            >
+              <span class="show-more-text" data-i18n="show-more"
+                >{t("show-more")}</span
+              >
+              <i class="fas fa-chevron-down"></i>
             </button>
           </div>
 
           <!-- ==================== EXTRA PROJECTS ==================== -->
           <div class="extra-projects" id="extra-projects">
-
             <div class="project-mini-card">
               <div class="mini-card-header">
-                <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-                  </svg>
+                <svg
+                  class="folder-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#f5a623"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                  ></path>
+                </svg>
                 <div class="mini-card-actions">
-                  <a href="https://cristo-obrero-astro.netlify.app/" target="_blank" title="Visit"><i class="fas fa-external-link-alt"></i></a>
-              <a href="https://github.com/renzohg/Cristo-Obrero-Astro" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                  <a
+                    href="https://cristo-obrero-astro.netlify.app/"
+                    target="_blank"
+                    title="Visit"><i class="fas fa-external-link-alt"></i></a
+                  >
+                  <a
+                    href="https://github.com/renzohg/Cristo-Obrero-Astro"
+                    target="_blank"
+                    title="GitHub"><i class="fab fa-github"></i></a
+                  >
                 </div>
               </div>
-              <h3>Cristo Obrero</h3>
-              <p>Informative website for the Cristo Obrero educational institution.</p>
+              <h3 data-i18n="iico">{t("iico")}</h3>
+              <p data-i18n="iico-text">{t("iico-text")}</p>
               <div class="mini-tech-tags">
                 <span class="mini-tech-tag">HTML</span>
                 <span class="mini-tech-tag">CSS</span>
@@ -291,15 +514,30 @@ const t = useTranslations(lang);
 
             <div class="project-mini-card">
               <div class="mini-card-header">
-                <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-                  </svg>
+                <svg
+                  class="folder-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#f5a623"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                  ></path>
+                </svg>
                 <div class="mini-card-actions">
-                  <a href="https://fronesis.netlify.app/" target="_blank" title="Visit"><i class="fas fa-external-link-alt"></i></a>
+                  <a
+                    href="https://fronesis.netlify.app/"
+                    target="_blank"
+                    title="Visit"><i class="fas fa-external-link-alt"></i></a
+                  >
                 </div>
               </div>
-              <h3>Fronesis</h3>
-              <p>Professional web development services website, focused on creating simple, responsive, and SEO-optimized pages.</p>
+              <h3 data-i18n="fronesis">{t("fronesis")}</h3>
+              <p data-i18n="fronesis-text">{t("fronesis-text")}</p>
               <div class="mini-tech-tags">
                 <span class="mini-tech-tag">HTML</span>
                 <span class="mini-tech-tag">CSS</span>
@@ -310,16 +548,35 @@ const t = useTranslations(lang);
 
             <div class="project-mini-card">
               <div class="mini-card-header">
-                <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-                  </svg>
+                <svg
+                  class="folder-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#f5a623"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                  ></path>
+                </svg>
                 <div class="mini-card-actions">
-                  <a href="https://weather-app-renzo.netlify.app" target="_blank" title="Visit"><i class="fas fa-external-link-alt"></i></a>
-              <a href="https://github.com/renzohg/Weather-app-Vue" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                  <a
+                    href="https://weather-app-renzo.netlify.app"
+                    target="_blank"
+                    title="Visit"><i class="fas fa-external-link-alt"></i></a
+                  >
+                  <a
+                    href="https://github.com/renzohg/Weather-app-Vue"
+                    target="_blank"
+                    title="GitHub"><i class="fab fa-github"></i></a
+                  >
                 </div>
               </div>
-              <h3>Weather App</h3>
-              <p>Weather application with API consumption.</p>
+              <h3 data-i18n="wheather-app">{t("wheather-app")}</h3>
+              <p data-i18n="wheather-app-text">{t("wheather-app-text")}</p>
               <div class="mini-tech-tags">
                 <span class="mini-tech-tag">HTML</span>
                 <span class="mini-tech-tag">CSS</span>
@@ -330,16 +587,35 @@ const t = useTranslations(lang);
 
             <div class="project-mini-card">
               <div class="mini-card-header">
-                <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-                  </svg>
+                <svg
+                  class="folder-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#f5a623"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                  ></path>
+                </svg>
                 <div class="mini-card-actions">
-                  <a href="https://card-generator-renzo.netlify.app/" target="_blank" title="Visit"><i class="fas fa-external-link-alt"></i></a>
-              <a href="https://github.com/renzohg/Card-generator" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                  <a
+                    href="https://card-generator-renzo.netlify.app/"
+                    target="_blank"
+                    title="Visit"><i class="fas fa-external-link-alt"></i></a
+                  >
+                  <a
+                    href="https://github.com/renzohg/Card-generator"
+                    target="_blank"
+                    title="GitHub"><i class="fab fa-github"></i></a
+                  >
                 </div>
               </div>
-              <h3>Card Generator</h3>
-              <p>Simple form to generate a card with the entered text.</p>
+              <h3 data-i18n="card-generator">{t("card-generator")}</h3>
+              <p data-i18n="card-generator-text">{t("card-generator-text")}</p>
               <div class="mini-tech-tags">
                 <span class="mini-tech-tag">HTML</span>
                 <span class="mini-tech-tag">CSS</span>
@@ -350,29 +626,47 @@ const t = useTranslations(lang);
 
             <div class="project-mini-card">
               <div class="mini-card-header">
-                <svg class="folder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-                  </svg>
+                <svg
+                  class="folder-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#f5a623"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                  ></path>
+                </svg>
                 <div class="mini-card-actions">
-                  <a href="https://test-ig-login.netlify.app/" target="_blank" title="Visit"><i class="fas fa-external-link-alt"></i></a>
+                  <a
+                    href="https://test-ig-login.netlify.app/"
+                    target="_blank"
+                    title="Visit"><i class="fas fa-external-link-alt"></i></a
+                  >
                 </div>
               </div>
-              <h3>Instagram Login</h3>
-              <p>Recreation of the Instagram login form, for educational and practical purposes.</p>
+              <h3 data-i18n="instagram-login">{t("instagram-login")}</h3>
+              <p data-i18n="instagram-login-text">
+                {t("instagram-login-text")}
+              </p>
               <div class="mini-tech-tags">
                 <span class="mini-tech-tag">HTML</span>
                 <span class="mini-tech-tag">CSS</span>
                 <span class="mini-tech-tag">JavaScript</span>
               </div>
             </div>
-
           </div><!-- /extra-projects -->
         </div>
       </div>
 
       <div class="inicio4">
         <div id="skills">
-          <h1 id="skills-title">{t("skills-title")}</h1>
+          <h1 id="skills-title" data-i18n="skills-title">
+            {t("skills-title")}
+          </h1>
           <div class="grid-container">
             <div class="containerfrontend">
               <div class="containerhr">
@@ -450,12 +744,6 @@ const t = useTranslations(lang);
                   <div class="icon">
                     <img src="/SVG/react.svg" alt="React icon" loading="lazy" />
                     <p>React</p>
-                  </div>
-                </a>
-                <a draggable="false" href="https://vitejs.dev/" target="_blank">
-                  <div class="icon">
-                    <img src="/SVG/vite.svg" alt="Vite icon" loading="lazy" />
-                    <p>Vite</p>
                   </div>
                 </a>
                 <a draggable="false" href="https://vue.io/" target="_blank">
@@ -539,7 +827,7 @@ const t = useTranslations(lang);
             </div>
             <div class="containerothers">
               <div class="containerhr">
-                <h2 id="other">{t("other")}</h2>
+                <h2 id="other" data-i18n="other">{t("other")}</h2>
                 <hr />
               </div>
               <div class="others">
@@ -577,6 +865,16 @@ const t = useTranslations(lang);
                     <p>Netlify</p>
                   </div>
                 </a>
+                <a draggable="false" href="https://vercel.com/" target="_blank">
+                  <div class="icon">
+                    <img
+                      src="/SVG/vercel.svg"
+                      alt="Vercel icon"
+                      loading="lazy"
+                    />
+                    <p>Vercel</p>
+                  </div>
+                </a>
                 <a
                   draggable="false"
                   href="https://www.figma.com/"
@@ -597,32 +895,10 @@ const t = useTranslations(lang);
                     <p>npm</p>
                   </div>
                 </a>
-                <a
-                  draggable="false"
-                  href="https://visualstudio.microsoft.com/"
-                  target="_blank"
-                >
+                <a draggable="false" href="https://vitejs.dev/" target="_blank">
                   <div class="icon">
-                    <img
-                      src="/SVG/visualstudio.svg"
-                      alt="Visual Studio icon"
-                      loading="lazy"
-                    />
-                    <p>VS Code</p>
-                  </div>
-                </a>
-                <a
-                  draggable="false"
-                  href="https://www.sublimetext.com/"
-                  target="_blank"
-                >
-                  <div class="icon">
-                    <img
-                      src="/SVG/sublimetext.svg"
-                      alt="Sublime Text icon"
-                      loading="lazy"
-                    />
-                    <p>Sublime Text</p>
+                    <img src="/SVG/vite.svg" alt="Vite icon" loading="lazy" />
+                    <p>Vite</p>
                   </div>
                 </a>
               </div>
@@ -631,7 +907,8 @@ const t = useTranslations(lang);
         </div>
       </div>
     </div>
-  </body>
+      </div>
+    </div>
 
   <footer>
     <div id="contact">
@@ -690,11 +967,59 @@ const t = useTranslations(lang);
             id="copyy"
             src="/SVG/copy_white.svg"
             style="margin-right: 5px;"
-          /><span id="copy">{t("copy")}</span></button
+          /><span id="copy" data-i18n="copy">{t("copy")}</span></button
         >
+        <br />
       </div>
-      <p id="thanks-you" class="thank-you">{t("thank-you")}</p>
+      <p id="thanks-you" class="thank-you" data-i18n="thank-you">
+        {t("thank-you")}
+      </p>
     </div>
   </footer>
-  <script src="../components/scripts.js"></script>
+
+    <script define:vars={{ ui, defaultLang }}>
+      window.uiTranslations = ui;
+      window.defaultLang = defaultLang;
+
+      let currentLang = localStorage.getItem("lang") || defaultLang;
+
+      window.changeLanguage = function (lang) {
+        currentLang = lang;
+        localStorage.setItem("lang", lang);
+        document.documentElement.lang = lang;
+
+        const elements = document.querySelectorAll("[data-i18n]");
+        elements.forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (ui[lang] && ui[lang][key]) {
+            if (el.tagName === "TITLE") {
+              el.textContent = ui[lang][key];
+            } else {
+              el.innerText = ui[lang][key];
+            }
+          }
+        });
+
+        const copyBtn = document.getElementById("copy-btn");
+        if (copyBtn && ui[lang] && ui[lang]["copied"]) {
+          copyBtn.setAttribute("data-copied-text", ui[lang]["copied"]);
+        }
+
+        const showMoreBtn = document.getElementById("show-more-btn");
+        if (showMoreBtn && ui[lang]) {
+          if (ui[lang]["show-more"]) {
+            showMoreBtn.setAttribute("data-show-text", ui[lang]["show-more"]);
+          }
+          if (ui[lang]["hide-projects"]) {
+            showMoreBtn.setAttribute("data-hide-text", ui[lang]["hide-projects"]);
+          }
+        }
+      };
+
+      if (currentLang !== defaultLang) {
+        window.changeLanguage(currentLang);
+      }
+    </script>
+    <script src="../components/scripts.js"></script>
+  </body>
 </html>
